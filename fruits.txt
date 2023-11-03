@@ -1,1 +1,12 @@
 THis is text to commit for practice
+Git Commands
+ 
+    git init - create a repo
+    git status- Check status of the work we have done inside of the folder
+    git add filename - used to stage work from the work area to the staging area
+    git commit m "Description" - Create history of the work
+    git log - Check the list of commits
+    ===============================================================
+    git branch - List all branches (current branch will have an*)
+    git branch branchname - Creates a new branch (no spaces in names)
+    git switch branchname - Changes branch to chosen branchname
