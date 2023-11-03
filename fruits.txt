@@ -14,3 +14,6 @@ Git Commands
     If merging go back to branch you want to merge for example from newfruit
     back to main
     git merge branch - merge branch to the branch your on
+    git branch -m current newbranch - Change branch name
+    git push - pushes to github
+    git fetch or pull - takes from github
