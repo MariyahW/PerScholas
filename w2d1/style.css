@@ -1,0 +1,10 @@
+.container{
+    width: 95%;
+  text-align: center;
+  width:200;
+}
+#resume{
+    border: 12 px;
+    border-color: black;
+    background-color: aliceblue;
+}
