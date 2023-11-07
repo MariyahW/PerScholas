@@ -3,8 +3,9 @@ Git Commands
  
     git init - create a repo
     git status- Check status of the work we have done inside of the folder
+    touch <filename> - Create a file
     git add filename - used to stage work from the work area to the staging area
-    git commit m "Description" - Create history of the work
+    git commit  -m "Description" - Create history of the work
     git log - Check the list of commits
     ===============================================================
     git branch - List all branches (current branch will have an*)
@@ -15,5 +16,5 @@ Git Commands
     back to main
     git merge branch - merge branch to the branch your on
     git branch -m current newbranch - Change branch name
-    git push - pushes to github
+    git push -u origin <branch name>- pushes to github do after set up repo in github so can add remote config line
     git fetch or pull - takes from github

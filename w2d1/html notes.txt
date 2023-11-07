@@ -1,0 +1,3 @@
+Clear file and place ! and boilerplate will auto generate
+<head> is for metadata 
+    metadata is not displayed 
