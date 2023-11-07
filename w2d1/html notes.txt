@@ -1,3 +1,10 @@
 Clear file and place ! and boilerplate will auto generate
 <head> is for metadata 
     metadata is not displayed 
+
+Parent Child - the child will inherit the qualities of the Parent
+    The Child is an element contained by another
+
+You can do a block type inside of a block type but not an block inside of inline
+   <div> Container
+   
