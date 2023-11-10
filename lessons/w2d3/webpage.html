@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: green;
+        }
+        form label {
+            background-color: orange;
+
+        }
+        h1 > p{
+
+            color: red;
+            font-size: 20px;
+        }
+        h1 + p{
+            border-top: 10px dashed;
+        }
+        h1 ~ form {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Webpage
+        <p>This is a child of h1</p>
+        </h1>
+    <p>Visit <a href="https://www.google.com" target="_blank">Google</a></p>
+
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
+        <button>Login</button>
+
+
+
+    </form>
+</body>
+</html>
