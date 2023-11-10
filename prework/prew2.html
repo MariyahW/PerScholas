@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="prew2.css"> </head>
+
+<body>
+    <div class="container">
+      
+  <div id="calculator">
+      <!--Form for calculator -->
+      <label for="BillAmt">How much was the bill?</label>
+      <br>
+      $<input type="number"id = "BillAmt"  value="100">
+      <br>
+      <label for="percentTip">What percent would you like to tip</label>
+      <br>
+     <select id="percentTip">
+      <option disabled selected value="0">Choose...</option>
+        <option value="0.3">30% </option>
+        <option value="0.2">20% </option>
+        <option value="0.15">15% </option>
+        <option value="0.1">10% </option>
+        <option value="0.05">5% </option>
+      </select>
+      <br>
+      <label for="numGuest">How many guest will be splitting the bill?</label>
+      <br>
+     <input type ="number" id = "numGuest" value = 1> Person/People
+     <br>
+     <button type="button">Calculate</button>
+
+      <br>
+  </div>
+      <br>
+      <div id="output"></div>
+    
+    <script src="prew2.js">
+      
+    </script>
+      
+</body>
+
+</html>

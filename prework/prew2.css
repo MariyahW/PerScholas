@@ -1,0 +1,35 @@
+/*background of calculator page*/
+body{
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(to right,#675df9,#cfcdc4);
+  }
+  /*calculator container placement/ general stylling on page*/
+  .container{
+    width: 95%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  /* bacground information for calculator on page*/
+  #calculator{
+    width: 300px;
+    height: 300px;
+    border: 12px;
+    background: #f2f2f2;
+    
+    
+  }
+  /*styling for input boxes*/
+  #calculator input{
+    box-sizing: border-box;
+    width: 90%;
+    padding: 8px;
+    outline: none;
+    border: 1px solid lightgray;
+    
+  }
+  
+  
