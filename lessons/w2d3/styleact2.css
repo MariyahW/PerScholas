@@ -13,4 +13,8 @@ table {
     background-color: lightcoral;
     color: white;
  }
- 
+ #answer{
+   height: 20px;
+   text-align: right;
+   font-weight: bold;
+ }
