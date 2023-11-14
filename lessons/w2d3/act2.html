@@ -7,38 +7,41 @@
     <link rel="stylesheet" href="styleact2.css" />
   </head>
   <body>
-    <table>
-      <tr id="answer" >
-        <td colspan="4">0.00</td>
-      </tr>
-      <tr rowspan="2">
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td>C</td>
+    <table class="table">
+      <tr>
+        <td colspan="4"><input id="answer" type="text" value=" "></input></td>
       </tr>
       <tr>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>/</td>
+        <td><input type="button" value="7" onclick="display('7')"></input></td>
+        <td><input type="button" value="8" onclick="display('8')"></input></td>
+        <td><input type="button" value="9" onclick="display('9')"></input></td>
+        <td><input type="button" value="C" onclick="clearScreen()"></input></td>
       </tr>
       <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>*</td>
+        <td><input type="button" value="4" onclick="display('4')"></input></td>
+        <td><input type="button" value="5" onclick="display('5')"></input></td>
+        <td><input type="button" value="6" onclick="display('6')"></input></td>
+        <td><input type="button" value="/" onclick="display('/')"></input></td>
       </tr>
       <tr>
-        <td>0</td>
-        <td>00</td>
-        <td>.</td>
-        <td>+</td>
+        <td><input type="button" value="1" onclick="display('1')"></input></td>
+        <td><input type="button" value="2" onclick="display('2')"></input></td>
+        <td><input type="button" value="3" onclick="display('3')"></input></td>
+        <td><input type="button" value="*" onclick="display('*')"></input></td>
+        
+      </tr>
+      <tr>
+        <td><input type="button" value="0" onclick="display('0')"></input></td>
+        <td><input type="button" value="00" onclick="display('00')"></input></td>
+        <td><input type="button" value="." onclick="display('.')"></input></td>
+        <td><input type="button" value="+" onclick="display('+')"></input></td>
+        
       </tr>
       <tr height = "20px">
-        <td colspan="3">=</td>
-        <td>-</td>
+        <td colspan="3"><input type="button" value="=" onclick="sum()"></input></td>
+        <td><input type="button" value="-" onclick="display('-')"></input></td>
       </tr>
     </table>
+    <script type="text/javascript" src= "./act2script.js"></script>
   </body>
 </html>

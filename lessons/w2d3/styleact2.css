@@ -9,12 +9,20 @@ table {
     border: 1px solid red;
  }
  
- td:hover {
-    background-color: lightcoral;
+ input:hover {
+    background-color: coral;
     color: white;
  }
  #answer{
-   height: 20px;
+   height: 80%;
+   width: 90%;
    text-align: right;
    font-weight: bold;
+ }
+ table input{
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  color: white;
+
  }
