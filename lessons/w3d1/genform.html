@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic Form</title>
+    <link rel="stylesheet" href="./genform.css">
+  </head>
+  <body class="page">
+    <form class="form">
+      <h1>Get in touch</h1>
+      <input type="text" name="name" id="name" value="Name" />
+      <br />
+      <input type="email" name="email" id="email" value="Email" />
+      <br />
+      <select name="reason" id="reason">
+        <option disable selected value=" ">Contact Reason</option>
+        <option value="BrokenLink">Broken Link</option>
+        <option value="PaymentHelp">Payment Help</option>
+        <option value="OtherReason">Other Reason</option>
+      </select>
+      <br />
+      <input
+        type="text"
+        name="message"
+        id="message"
+        style="height: 180px; width: 90%"
+        value="How can we help you?"
+      />
+      <br>
+      <input type="button" name="submit" id="submit" value="Submit" style="width: 25%;">
+      <br>
+    </form>
+  </body>
+</html>
