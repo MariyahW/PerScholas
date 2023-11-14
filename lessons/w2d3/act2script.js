@@ -6,8 +6,9 @@ function display(value){
 function sum() {
     let next = document.getElementById("answer").value;
     let equation = eval(next);
-    document.getElementById("answer")=equation;
-    output.innerHTML(equation);
+    document.getElementById("answer").value=equation;
+
+    
     
 }
 function clearScreen(){
