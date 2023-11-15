@@ -1,0 +1,44 @@
+.loginBox {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  height: 400px;
+  width: 300px;
+
+  border-color: lightgray;
+  box-shadow: 10px 10px 10px grey;
+}
+#forgot {
+  background: transparent;
+  border: none;
+}
+#login {
+  background-color: cyan;
+  color: white;
+  border: none;
+  width: 180px;
+  box-shadow: 10px 10px 10px rgba(187, 184, 184, 30%);
+}
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.loginBox input {
+  border: none;
+  background-color: rgb(187, 184, 184);
+  height: 30px;
+}
+form img {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: -35px;
+}
+.loginBox #login:hover,
+.loginBox #forgot:hover {
+  cursor: pointer;
+}
