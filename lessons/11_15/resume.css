@@ -1,0 +1,68 @@
+.resume{
+    display: flex;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family:monospace;
+    line-height: 1.5;
+}
+#resumeHeader{
+display: flex;
+flex-wrap: wrap;
+width: 90%;
+background-color: lightgray;
+margin-top: 7%;
+border-bottom: 4px ridge;
+
+}
+name img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 75%;
+    
+}
+name{
+    margin-top: 5%;
+    width: 45%;
+    margin-left: 5%;
+}
+data{
+    margin-top: 5%;
+    font-size: larger;
+    width: 50%;
+    font-weight: bold;
+}
+summary{
+    order:2;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#resumeBody{
+    display: flex;
+flex-wrap: wrap;
+width: 90%;
+background-color: lightgray;
+margin-bottom: 7%;
+justify-content: center;
+}
+technicalSkills{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+education{
+    
+    width: 100%;
+}
+
+a{
+    color: blue;
+}
+a:hover{
+    background-color: aliceblue;
+}
+experience p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
