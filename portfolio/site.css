@@ -30,6 +30,13 @@
     width: 95%;
   border: #001b2e 5px ridge;
   border-radius: 30%;
+  transition-property: border-color;
+    transition-duration: 1s;
+}
+#nameImage img:hover{
+
+    border-color: aliceblue;
+    transform: rotate(180deg);
 }
 #lowerHalf {
   width: 100%;
@@ -88,4 +95,13 @@ form{
     text-align: center;
     width: 100%;
     align-items: center;
+}
+#hi{
+    transition-property: border, background-color, color;
+    transition-duration: 5s;
+}
+#hi:hover{
+    background-color: #f5cb5c;
+    color: #001B2E;
+    border: #294c60 solid 5px;
 }
