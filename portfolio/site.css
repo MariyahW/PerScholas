@@ -1,35 +1,68 @@
 .main {
   display: flex;
   flex-wrap: wrap;
-  background-color:#001b2e;
+  background-color: #001b2e;
   color: #f7e8a4;
   height: 100%;
   width: 100%;
   justify-content: center;
+  line-height: 1.5;
 }
-navBar {
+#navBar {
   width: 100%;
   background-color: #adb6c4;
-  
 }
-navBar a{
+#navBar a {
+  color: #294c60;
+  font-size: large;
+}
+#navBar a:hover {
+  background-color: #f5cb5c;
+  border: 1px solid;
+  border-radius: 15%;
+}
+#about {
     
-        color:#294C60;
-        font-size: large;
-      
+  width: 100%;
+  font-size: large;
 }
-navBar a:hover{
-    background-color:#F5CB5C;
-    border: 1px solid;
-    border-radius: 15%;
+#nameImage img {
+    width: 95%;
+  border: #001b2e 5px ridge;
+  border-radius: 30%;
 }
-about {
-    width: 100%;
+#lowerHalf {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #294c60;
+}
+#projects {
+    display: flex;
+    justify-content: center;
+  width: 50%;
+}
+#blogEntry {
+  width: 40%;
+  background-color: #f7e8a4;
+  color: #001B2E;
+
+}
+.projectBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+.projectBox img{
+    border: #f7e8a4 5px solid;
+    width: 80%;
+}
+.blogPost{
     /* display: flex;
     flex-wrap: wrap; */
-    /* justify-content: center; */
-}
-nameImage img {
-border: #001b2e 5px ridge;
-border-radius: 30%;
+    width: 75%;
+    background-color: #294c60;
+    color:#001B2E;
+    text-align: center;
 }
