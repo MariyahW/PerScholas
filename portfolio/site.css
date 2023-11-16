@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  background-color:#001b2e;
+  color: #f7e8a4;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+navBar {
+  width: 100%;
+  background-color: #adb6c4;
+  
+}
+navBar a{
+    
+        color:#294C60;
+        font-size: large;
+      
+}
+navBar a:hover{
+    background-color:#F5CB5C;
+    border: 1px solid;
+    border-radius: 15%;
+}
+about {
+    width: 100%;
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: center; */
+}
+nameImage img {
+border: #001b2e 5px ridge;
+border-radius: 30%;
+}
