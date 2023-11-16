@@ -66,3 +66,26 @@
     color:#001B2E;
     text-align: center;
 }
+#mainBlog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #294c60;
+    width: 100%;
+  
+    
+}
+#mainBlog a{
+    color: #f7e8a4;
+    
+    
+}
+#mainBlog a:hover{
+    cursor: crosshair;
+}
+form{
+    
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
