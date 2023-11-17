@@ -1,47 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./practice.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./practice.css" />
 
     <title>Dashboard Activity</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-    <nav class="navbar navbar-expand-xxl bg-dark-subtle navbar-dark">
-       <div class="container-fluid">
-        <ul class="nav flex-column">
+      <nav class="navbar navbar-expand-xxl bg-dark-subtle navbar-dark">
+        <div class="container-fluid">
+          <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#Dashboard">Dashboard</a></li>
-            <li class="nav-item"> <a class="nav-link" href="#Team">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Complete">Completed Task</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#toDo" role="button" data-bs-toggle="dropdown">To-Do</a>
-
-            <ul class="dropdown-menu bg-dark-subtle">
-                <li><a class="dropdown-item" href="#pastDue">Past Due</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item bg-danger-subtle" href="#urgent">Urgent</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#upcoming">Upcoming Due Date</a></li>
-            </ul>
+            <li class="nav-item">
+              <a class="nav-link active" href="#Dashboard">Dashboard</a>
             </li>
-        </ul>
-    
+            <li class="nav-item"><a class="nav-link" href="#Team">Team</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Complete">Completed Task</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#toDo"
+                role="button"
+                data-bs-toggle="dropdown"
+                >To-Do</a
+              >
+
+              <ul class="dropdown-menu bg-dark-subtle">
+                <li><a class="dropdown-item" href="#pastDue">Past Due</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item bg-danger-subtle" href="#urgent"
+                    >Urgent</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#upcoming"
+                    >Upcoming Due Date</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <user-info>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control-sm"
+            type="search"
+            placeholder="search"
+            aria-label="search"
+          />
+          <button class="btn btn-outline-dark btn-light">Search</button>
+        </form>
+
+        <a href="#notifcations" style="margin-left: 25%"
+          ><img src="./push-notification.png" alt="notification"
+        /></a>
+        <a href="#messages" style="margin-left: 5%"
+          ><img src="./new-email.png" alt="message"
+        /></a>
+        <a style="width: 20%; margin-left: 10%; float: right" href="#profile"
+          ><img id="profilePic" src="./icon.png" alt="profile picture"
+        /></a>
+      </user-info>
+
+      <!--      -->
+
+      <div id="charting">
+        <graph-main
+          class="d-inline-block justify-content-center"
+          style="height: 50%; width: 90%"
+        >
+          <img
+            src="./graphMain.png"
+            alt="Sales"
+          />
+        </graph-main>
+
+        <div id="secondaryCharts" class="d-flex">
+          <chart-one>
+            <img src="./chartOne.png" alt="ChartOne" />
+          </chart-one>
+          <chart-two>
+            <img src="./chartTwo.png" alt="chartTwo" />
+          </chart-two>
+        </div>
+      </div>
     </div>
-</div>
-        </nav>
-
-
-
-    </div>
-
-
-
-
-    
-</body>
+  </body>
 </html>

@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+body,html {
+  height: 100%;
+  width: 100%;
+}
+nav {
+  height: 100%;
+  width: 20%;
+}
+user-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 80%;
+  background-color: rgba(0, 128, 128, 0.25);
+  height: 10%;
+}
+
+#profilePic {
+  height: 30%;
+  width: 30%;
+  float: right;
+}
+user-info form {
+  width: 30%;
+  height: 50%;
+}
+user-info a {
+  color: black;
+}
+#charting{
+    height: 80%;
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+graph-main img{
+    height: 100%;
+    width: 100%;
+}
+   
+
+#secondaryCharts{
+    height: 50%;
+    width: 90%;
+}
+chart-one {
+    width: 50%;
+}
+chart-one img{
+    width: 90%;
+    height: 90%;
+}
+chart-two {
+    width: 50%;
+}
+chart-two img{
+    width: 90%;
+    height: 90%;
+}
