@@ -62,9 +62,10 @@ name-image img:hover{
     width: 50%;
 }
 .projectBox img{
-    border: #f7e8a4 5px solid;
+    /* border: #f7e8a4 5px solid; */
     height: 100%;
     width: 80%;
+    
 }
 .blogPost{
     /* display: flex;
