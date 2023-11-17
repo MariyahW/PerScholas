@@ -13,7 +13,7 @@
     <title>Contact Me</title>
   </head>
   <body>
-    <div class="main" style="height: 100%">
+    <div class="main">
         <div id= "navBar">
         <a href="./home.html">Home</a>
         <a href="./onlineresume.html">Resume</a>
@@ -23,15 +23,21 @@
         <a href="./blog.html" style="margin-left: 20%;">Exclusively Mariyah</a>
 
       </div>
-      <div class="main">
-        <img src="./images/contactpage.gif" alt="gif"></img>
+      
+        <img src="./images/contactpage.gif" alt="gif" style="width: 30%;"></img>
+        <br>
         <form>
-            <input type="text" name="name" id="name" value="Name*" required>
+          <label for="name">Name</label>
+          
+            <input type="text" name="name" id="name"  required>
             <br>
-            <input type="email" name="email" id="email" value="Email">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" >
             <br>
+            <label for="phone">Phone </label>
             <input type="tel" name="phone" id="phone" value="Phone number">
             <br>
+            <label for="contactReason">Reason for Contact</label>
             <select name="contactReason" id="contactReason"required >
                 <option value="selection" disabled selected >Please make a selection</option>
                 <option value="contractWork">Contract Work</option>
@@ -44,8 +50,22 @@
             <input type="submit" value="Submit">
 
         </form>
+<br>
+        <table style="width: 50%;">
+          <thead>
+            <tr>
+              <th>Table Head</th>
+              <th>Head</th>
+              <th>Another Header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>row1</td></tr></tbody>
+          <tfoot></tfoot>
+          
         
-      </div>
-    <script src="./site.js"></script>
+        </table>
+      
+    </div>
   </body>
 </html>

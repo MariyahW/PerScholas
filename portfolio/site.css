@@ -21,19 +21,19 @@
   border: 1px solid;
   border-radius: 15%;
 }
-#about {
+about-section {
     
   width: 100%;
   font-size: large;
 }
-#nameImage img {
+name-image img {
     width: 95%;
   border: #001b2e 5px ridge;
   border-radius: 30%;
   transition-property: border-color;
     transition-duration: 1s;
 }
-#nameImage img:hover{
+name-image img:hover{
 
     border-color: aliceblue;
     transform: rotate(180deg);
@@ -63,6 +63,7 @@
 }
 .projectBox img{
     border: #f7e8a4 5px solid;
+    height: 100%;
     width: 80%;
 }
 .blogPost{
@@ -93,8 +94,11 @@
 form{
     
     text-align: center;
-    width: 100%;
+    width: 75%;
     align-items: center;
+}
+form input{
+  width:50%;
 }
 #hi{
     transition-property: border, background-color, color;
