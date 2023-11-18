@@ -1,3 +1,7 @@
+body, html{
+  height: 100%;
+  width: 100%;
+}
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -5,11 +9,13 @@
   color: #f7e8a4;
   height: auto;
   width: 100%;
+  height: 100%;
   justify-content: center;
   line-height: 1.5;
 }
 #navBar {
   width: 100%;
+  height: 5%;
   background-color: #adb6c4;
 }
 #navBar a {
@@ -109,4 +115,13 @@ form input{
     background-color: #f5cb5c;
     color: #001B2E;
     border: #294c60 solid 5px;
+}
+contact-me{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+ 
+  
 }
