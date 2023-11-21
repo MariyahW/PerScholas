@@ -25,7 +25,7 @@ Beginning of portfolio website that has been built for skill based assessment fo
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@MariyahW](https://github.com/MariyahW) - Idea & Initial work
+- [@MariyahW Github](https://github.com/MariyahW) - Idea & Initial work
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - [Inspiration:] https://tishana.github.io/
