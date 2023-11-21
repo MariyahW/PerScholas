@@ -1,98 +1,17 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# Portfolio for Skill Based Assessment 
+## Perscholas
 
-<h3 align="center">Portfolio Site for Skill Based Assessment</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
-
----
-
-<p align="center"> This site will be the basis of my Portfolio Website.
-    <br> 
-</p>
-
-## 📝 Table of Contents
+## Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [TODO](#todo)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+## About <a name = "about"></a>
 
-This project is currently boo
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+Beginning of portfolio website that has been built for skill based assessment for Perscholas. The site contains links to Github, a partial online resume, a page to contact me, as well as the starts of my blog. I previously had a site that was built with a drag and drop method. As I have been learning new skills I took the site down and have decided to build one instead. Allowing to show my growth. 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -100,14 +19,15 @@ Add additional notes about how to deploy this on a live system.
 - [NodeJs](https://nodejs.org/en/)
 - [Coolors](https://coolors.co/)
 
+## ToDo <a a name = "todo"></a> 
+- Build a dedicated project page to showcase several projects. As of now 2 projects are highlighted on home page. The Github links are posted.
+- Attach to domain. The previously mentioned site was hosted at mariyahwatson.com The domain is still owned. 
+
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@MariyahW](https://github.com/MariyahW) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- [Inspiration:] https://tishana.github.io/
+- [inspiration:] 
+-https://careerfoundry.com/en/blog/web-development/software-engineer-portfolio/
