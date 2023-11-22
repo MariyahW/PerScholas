@@ -45,14 +45,14 @@ const radiusSq = (area/PI);
 return(Math.sqrt(radiusSq));
 }
 
-// {
-//     initialPlants=100;
-//     let numWeeks = 10;
-//     let numberOFPlants=plantGrowth(initialPlants, numWeeks);
-//     console.log(`${spaceNeeded(numberOFPlants)} square meters are needed to house ${numberOFPlants} plants.`);
-//     console.log(`The radius of the garden needed is ${gardenRadius(spaceNeeded(numberOFPlants))} square meters.`);
+{
+    initialPlants=100;
+    let numWeeks = 10;
+    let numberOFPlants=plantGrowth(initialPlants, numWeeks);
+    console.log(`${spaceNeeded(numberOFPlants)} square meters are needed to house ${numberOFPlants} plants.`);
+    console.log(`The radius of the garden needed is ${gardenRadius(spaceNeeded(numberOFPlants))} square meters.\n`);
 
-// }
+}
 
 //Part3
 {
