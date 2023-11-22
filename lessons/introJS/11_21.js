@@ -70,6 +70,7 @@ let speed = null;
 let gallons = null;
 let cost = null;
 let hours = null;
+
 function roadTrip(speed) {
   if (speed == 55) {
     gallons = totalDistance / 30;
@@ -123,3 +124,5 @@ function canAfford(speed) {
 console.log(canAfford(55));
 console.log(canAfford(60));
 console.log(canAfford(70));
+
+
