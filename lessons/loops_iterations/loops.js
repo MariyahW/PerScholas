@@ -1,23 +1,23 @@
-for(let i=10;i>0;i--){
-    console.log(i);
+for (let i = 10; i > 0; i--) {
+  console.log(i);
 }
-for(let i=1;i<10;i++){
-    console.log(i);
-    i++;
+for (let i = 1; i < 10; i++) {
+  console.log(i);
+  i++;
 }
 console.log(`Even numbers`);
-for(let i=1;i<10;i++){
-    if(i%2==0) console.log(i);
+for (let i = 1; i < 10; i++) {
+  if (i % 2 == 0) console.log(i);
 }
-console.log(`Multiples of 3 to 60`)
-for(let i=6; i<=60;i++){
-    if(i%3==0) console.log(i)
+console.log(`Multiples of 3 to 60`);
+for (let i = 6; i <= 60; i++) {
+  if (i % 3 == 0) console.log(i);
 }
-console.log(`Hash to 7`)
-let hash=`#`;
-for(let i=0; i<7;i++){
-   console.log(hash);
-    hash+=`#`;
+console.log(`Hash to 7`);
+let hash = `#`;
+for (let i = 0; i < 7; i++) {
+  console.log(hash);
+  hash += `#`;
 }
 console.log(`prime, even, odd`);
 let prime = ` `;
