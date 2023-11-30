@@ -35,14 +35,21 @@ console.log(longString(["say", "hello", "in", "the", "morning"])); // morning
 
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number.
 function longer(arrString, num) {
-    arrString.forEach(element=>{
-        
-
-
-    })
-
-
+  let arrRet = [];
+  arrString.forEach((element) => {
+    if (element.length > num) arrRet.push(element);
+  });
+  return arrRet;
 }
-// For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
+
+console.log(longer(["say", "hello", "in", "the", "morning"],3));//[hello,morning]
 
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+function countingUp(num){
+    if(num >=1){
+        console.log(num);
+        countingUp(num-1);
+    }
+}
+
+countingUp(5);
