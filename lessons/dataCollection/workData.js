@@ -1,4 +1,5 @@
 // Part 1: I will use arrays instead of a string
+ //Do not need to call each function to view results they each console.log the results as well as return. The function are used in each other so if you run the code just in part 4 you will see all results.
 
 //Part 2
 function refactoredArray(csvString) {
@@ -24,9 +25,7 @@ function refactoredArray(csvString) {
   console.log(dataT);
   return dataT;
 }
-// refactoredArray(
-//   `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`
-// );
+;
 
 //Part 3
 function makingObjects(csvString) {
@@ -41,7 +40,7 @@ function makingObjects(csvString) {
   lower.forEach((key) => {
     obKeys.push(key.toLowerCase());
   });
-  
+
   for (let i = 1; i < obArray[0].length + 1; i++) {
     for (let nest = 0; nest < obKeys.length; nest++) {
       tempObj[obKeys[nest]] = obArray[i][nest];
@@ -54,10 +53,11 @@ function makingObjects(csvString) {
   console.log(objectWords);
   return objectWords;
 }
-// makingObjects(`ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`);
+
 
 //Part 4
 {
+ 
   let arrObj = makingObjects(
     `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`
   );
@@ -71,4 +71,17 @@ function makingObjects(csvString) {
   arrObj.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
   console.log(`part4`);
   console.log(arrObj);
+
+  //Part 5
+  let myString = ` `;
+  let subObj = {};
+  arrObj.forEach((element) => {
+    subObj = element;
+
+    for (let i in subObj) {
+      myString += ` ${subObj[i]},`;
+    }
+  });
+
+  console.log(myString);
 }
