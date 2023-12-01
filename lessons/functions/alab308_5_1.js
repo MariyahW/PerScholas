@@ -42,14 +42,37 @@ function longer(arrString, num) {
   return arrRet;
 }
 
-console.log(longer(["say", "hello", "in", "the", "morning"],3));//[hello,morning]
+console.log(longer(["say", "hello", "in", "the", "morning"], 3)); //[hello,morning]
 
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
-function countingUp(num){
-    if(num >=1){
-        console.log(num);
-        countingUp(num-1);
-    }
+function countingDown(num) {
+  if (num >= 1) {
+    console.log(num);
+    countingDown(num - 1);
+  }
 }
 
-countingUp(5);
+countingDown(5);
+
+//Part 2
+
+//Part 3 this function changes the original object
+function ageUp(obj) {
+  obj.age == null || obj.age == undefined ? (obj.age = 0) : (obj.age += 1);
+  obj.date == null || obj.date == undefined
+    ? (obj.date = new Date())
+    : (obj.date = new Date());
+}
+let anObj = { name: `Steve`,age: 45,  date: 2022 - 12 - 20 };
+ageUp(anObj);
+console.log(anObj);
+//Part 3 this function does not change the original
+function anotherAge(obj) {
+  let copyObj = { ...obj };
+  ageUp(copyObj);
+  return copyObj;
+}
+
+let myCopy = anotherAge(anObj);
+console.log(`myCopy is ${JSON.stringify(myCopy)}`);
+console.log(`the original anObj is ${JSON.stringify(anObj)}`);
