@@ -31,7 +31,7 @@ function longString(arrString) {
   return compare;
 }
 
-console.log(`Part 1 Longest String ${longString(["say", "hello", "in", "the", "morning"])}`); // morning
+console.log(`Part 1 Longest String is ${longString(["say", "hello", "in", "the", "morning"])}`); // morning
 
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number.
 function longer(arrString, num) {
@@ -42,7 +42,7 @@ function longer(arrString, num) {
   return arrRet;
 }
 
-console.log(`Part 1: String longer than a number ${longer(["say", "hello", "in", "the", "morning"], 3)}`); //[hello,morning]
+console.log(`Part 1: String(s) longer than a number ${longer(["say", "hello", "in", "the", "morning"], 3)}`); //[hello,morning]
 
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 function countingDown(num) {
@@ -79,18 +79,27 @@ function jobBirthday(arr){
   const job = arr.map(function(eachOBJ){
     eachOBJ.job=eachOBJ.occupation;
     delete eachOBJ.occupation;
+    eachOBJ.age=parseInt(eachOBJ.age)+1;
     return eachOBJ;
   } );
-console.log(job);
-  job.forEach(element=>{ageUp(element)});
   return job;
 }
-
-console.log(`Part 2: Change job`);
+console.log(`Part 2: Change job and add 1 year to age`);
 console.log(jobBirthday(arr));
 
-
-
+//Average age using reduce function
+function avgAge(arr){
+  let ages=[];
+ arr.forEach(element=>{
+  ages.push(parseInt(element.age));
+ });
+ let totalAge=ages.reduce((accumulator, currentValue)=>
+  { return accumulator+currentValue});
+ let avgAge= totalAge/arr.length;
+ return avgAge;
+}
+//This is on arr after ages are all aged up by 1
+console.log(`The average age is ${avgAge(arr)}`);
 //Part 3 this function changes the original object
 function ageUp(obj) {
   obj.age == null || obj.age == undefined ? (obj.age = 0) : (obj.age += 1);
