@@ -148,29 +148,43 @@ function fillStudent(assnGroup, learnerSub, course) {
   assignArr.forEach((element) => {
     pointValues[element.id] = element.points_possible;
   });
-
-  //Add each assignment grade to the proper student and add the total
+  console.log(pointValues);
+  //Add each assignment grade to the proper student
   for (index = 0; index < students.length; index++) {
     learnerSub.forEach((element) => {
       if (element.learner_id == students[index].studentID) {
         students[index].addAssignment(
           element.assignment_id,
-          element.submission.score);
-          //TODO: fix if statement to only add scores to total if the date has passed
-// let date=new Date();
-//         if (date<assignArr.find(element.assignment_id) )
-//           total += parseFloat(element.submission.score);
-//       }
-//     });
-    students[index].addTotal(total);
-    total = 0;
+          element.submission.score
+        );
+        //TODO: fix if statement to only add scores to total if the date has passed
+      }
+    });
   }
+  //Complete averages fir student scores
+  let score = 0;
+  let max = 0;
+  students.forEach((student) => {
+    for (const grade in student) {
+      for (const check in pointValues) {
+        if (grade == check) {
+          score = student[grade];
+          max = pointValues[check];
+          score/=max;
+         student.addAssignment(grade, score);
+        }
+      }
+    }
+  });
+//check submission dates
+
+
+  // students[index].addTotal(total);
+  // total = 0;
   return students;
 }
 
 students = fillStudent(assignmentGroup, submissions, course);
 console.log(students);
 
-function getAverage(students, assnGroup) {
-  
-}
+function getAverage(students, assnGroup) {}
