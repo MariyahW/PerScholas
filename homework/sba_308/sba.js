@@ -124,10 +124,10 @@ function getStudentID(learnerSub) {
 
 function fillStudent(assnGroup, learnerSub, course) {
   aCourse = getCourseID(course);
-  const students = getStudentID(learnerSub);
+  let students = getStudentID(learnerSub);
   let assignArr = [];
   let assignLen = 0;
-  const pointValues = {};
+  let pointValues = {};
 
   //if wrong course throw error
   if (assnGroup.course_id != aCourse) {
@@ -139,16 +139,12 @@ function fillStudent(assnGroup, learnerSub, course) {
   }
 
   //makes an array of just the assignments
-  for (const key in assnGroup) {
-    if (key == `assignments`) assignArr = [...assnGroup.assignments];
-  }
+  assignArr = assignmentArray(assnGroup);
   assignLen = assignArr.length;
 
   //Create an object to house the max points per assignment.
-  assignArr.forEach((element) => {
-    pointValues[element.id] = element.points_possible;
-  });
-  console.log(pointValues);
+  pointValues = maxPoints(assignArr);
+
   //Add each assignment grade to the proper student
   for (index = 0; index < students.length; index++) {
     learnerSub.forEach((element) => {
@@ -157,11 +153,13 @@ function fillStudent(assnGroup, learnerSub, course) {
           element.assignment_id,
           element.submission.score
         );
-        //TODO: fix if statement to only add scores to total if the date has passed
       }
     });
   }
-  //Complete averages fir student scores
+  students=onTime(assignArr,students, submissions);
+  
+  //Complete averages for student scores
+  //todo total alter score based on due date
   let score = 0;
   let max = 0;
   students.forEach((student) => {
@@ -170,14 +168,13 @@ function fillStudent(assnGroup, learnerSub, course) {
         if (grade == check) {
           score = student[grade];
           max = pointValues[check];
-          score/=max;
-         student.addAssignment(grade, score);
+          score /= max;
+          student.addAssignment(grade, score);
         }
       }
     }
   });
-//check submission dates
-
+  //check submission dates
 
   // students[index].addTotal(total);
   // total = 0;
@@ -188,3 +185,52 @@ students = fillStudent(assignmentGroup, submissions, course);
 console.log(students);
 
 function getAverage(students, assnGroup) {}
+
+//makes an array of just the assignments
+function assignmentArray(assnGroup) {
+  let assignArr = [];
+  for (const key in assnGroup) {
+    if (key == `assignments`) assignArr = [...assnGroup.assignments];
+  }
+  return assignArr;
+}
+
+//Create an object to house the max points per assignment.
+function maxPoints(assignArr) {
+  const pointValues = {};
+  assignArr.forEach((element) => {
+    pointValues[element.id] = element.points_possible;
+  });
+  return pointValues;
+}
+//todo fix onTime function
+function onTime(assignArr, students, learnerSub) {
+  let temp=0;
+  let temp2=0;
+  learnerSub.forEach((sub) => {
+    students.forEach((student) => {
+      if (sub.learner_id == student.studentID) {
+        assignArr.forEach((assignment) => {
+          if (assignment.id == sub.assignment_id) {
+            switch (sub.submission.submitted_at) {
+              //Late
+              case assignment.due_at > sub.submission.submitted_at:
+                temp=student[assignment.id]* 0.9;
+                console.log(temp);
+                temp2=assignment.id;
+                student.addAssignment(atemp2, temp);
+                break;
+              //assignment not yet due
+              case assignment.due_at > new Date():
+                delete student[assignment.id];
+              //turned in on time due nothing.
+              default:
+                break;
+            }
+          }
+        });
+      }
+    });
+  });
+  return students;
+}
