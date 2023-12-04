@@ -169,7 +169,7 @@ function fillStudent(assnGroup, learnerSub, course) {
           score = student[grade];
           max = pointValues[check];
           score /= max;
-          student.addAssignment(grade, score);
+          student.addAssignment(grade, score.toFixed(2));
         }
       }
     }
@@ -207,30 +207,37 @@ function maxPoints(assignArr) {
 function onTime(assignArr, students, learnerSub) {
   let temp=0;
   let temp2=0;
+  let time = setDate();
   learnerSub.forEach((sub) => {
     students.forEach((student) => {
       if (sub.learner_id == student.studentID) {
         assignArr.forEach((assignment) => {
           if (assignment.id == sub.assignment_id) {
-            switch (sub.submission.submitted_at) {
-              //Late
-              case assignment.due_at > sub.submission.submitted_at:
-                temp=student[assignment.id]* 0.9;
-                console.log(temp);
-                temp2=assignment.id;
-                student.addAssignment(atemp2, temp);
-                break;
-              //assignment not yet due
-              case assignment.due_at > new Date():
-                delete student[assignment.id];
-              //turned in on time due nothing.
-              default:
-                break;
-            }
+            //Late
+            if(sub.submission.submitted_at>assignment.due_at){
+             temp=student[assignment.id]* 0.89;
+            temp2=assignment.id;
+            student.addAssignment(temp2, temp);
+             }
+             //assignment not yet due
+             else if(assignment.due_at>time){
+              
+              delete student[assignment.id];
+             }
           }
         });
       }
     });
   });
   return students;
+}
+
+function setDate(){
+  let date =new Date();
+  let datey=date.getFullYear().toString();
+  let datem=date.getMonth().toString();
+  let dated=date.getDate();
+  date=datey+"-"+datem+"-"+dated;
+  return date;
+
 }
