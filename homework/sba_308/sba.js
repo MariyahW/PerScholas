@@ -76,11 +76,11 @@ const submissions = [
 
 //Global variable
 let aCourse = null;
-let total = 0;
 let students = [];
 
-function getLearnerData(assnGroup,learnerSub,courseInfo) {
+function getLearnerData(assnGroup, learnerSub, courseInfo) {
   students = fillStudent(assnGroup, learnerSub, courseInfo);
+
   return students;
 }
 //class to create student objects so that it remains dynamic
@@ -109,8 +109,6 @@ function getCourseID(courseInfo) {
   return courseNum;
 }
 
-// console.log(getCourseID(course));
-
 //param@ learner submissions an array of objects
 //returns studentID array
 function getStudentID(learnerSub) {
@@ -127,7 +125,6 @@ function fillStudent(assnGroup, learnerSub, course) {
   aCourse = getCourseID(course);
   let students = getStudentID(learnerSub);
   let assignArr = [];
-  let assignLen = 0;
   let pointValues = {};
 
   //if wrong course throw error
@@ -157,34 +154,34 @@ function fillStudent(assnGroup, learnerSub, course) {
       }
     });
   }
-  students=onTime(assignArr,students, submissions);
-  
+  students = onTime(assignArr, students, submissions);
+
   //Complete averages for student scores
   let score = 0;
   let max = 0;
-  let totals=0;
-  let totalm=0;
+  let totals = 0;
+  let totalm = 0;
+
   //Averages and total for students
   students.forEach((student) => {
     for (const grade in student) {
       for (const check in pointValues) {
         if (grade == check) {
           score = student[grade];
-          totals+=score;
+          totals += score;
           max = pointValues[check];
-          totalm+=max;
+          totalm += max;
           score /= max;
           student.addAssignment(grade, score.toFixed(2));
-          
         }
       }
     }
-    totals=totals/totalm;
+    totals = totals / totalm;
     student.addTotal(totals.toFixed(3));
-    totals=0;
-    totalm=0;
+    totals = 0;
+    totalm = 0;
   });
- 
+
   return students;
 }
 
@@ -203,11 +200,31 @@ function maxPoints(assignArr) {
   assignArr.forEach((element) => {
     pointValues[element.id] = element.points_possible;
   });
+  try {
+    for (const point in pointValues) {
+      switch (point) {
+        case 0:
+          throw new Error(
+            `Please only add assignments that will count toward final grade.`
+          );
+        default:
+          break;
+      }
+    }
+  } catch (e) {
+    for (const point in pointValues) {
+      switch (point) {
+        case 0:
+          delete point;
+          console.log(`The assignment has been deleted.`);
+      }
+    }
+  }
   return pointValues;
 }
 function onTime(assignArr, students, learnerSub) {
-  let temp=0;
-  let temp2=0;
+  let temp = 0;
+  let temp2 = 0;
   let time = setDate();
   learnerSub.forEach((sub) => {
     students.forEach((student) => {
@@ -215,16 +232,15 @@ function onTime(assignArr, students, learnerSub) {
         assignArr.forEach((assignment) => {
           if (assignment.id == sub.assignment_id) {
             //Late
-            if(sub.submission.submitted_at>assignment.due_at){
-             temp=student[assignment.id]* 0.89;
-            temp2=assignment.id;
-            student.addAssignment(temp2, temp);
-             }
-             //assignment not yet due
-             else if(assignment.due_at>time){
-              
+            if (sub.submission.submitted_at > assignment.due_at) {
+              temp = student[assignment.id] * 0.89;
+              temp2 = assignment.id;
+              student.addAssignment(temp2, temp);
+            }
+            //assignment not yet due
+            else if (assignment.due_at > time) {
               delete student[assignment.id];
-             }
+            }
           }
         });
       }
@@ -233,14 +249,13 @@ function onTime(assignArr, students, learnerSub) {
   return students;
 }
 
-function setDate(){
-  let date =new Date();
-  let datey=date.getFullYear().toString();
-  let datem=date.getMonth().toString();
-  let dated=date.getDate();
-  date=datey+"-"+datem+"-"+dated;
+function setDate() {
+  let date = new Date();
+  let datey = date.getFullYear().toString();
+  let datem = date.getMonth().toString();
+  let dated = date.getDate();
+  date = datey + "-" + datem + "-" + dated;
   return date;
-
 }
 
 students = getLearnerData(assignmentGroup, submissions, course);
