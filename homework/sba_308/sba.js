@@ -1,5 +1,5 @@
 /* result should have student Id, found in learner submissions.
-avg grade for all assignments submitted, scores in learnersub and points 
+avg grade for all assignments submitted, scores in learnerSub and points 
 possible are in assnGroup*/
 
 //testing variables
