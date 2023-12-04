@@ -79,8 +79,9 @@ let aCourse = null;
 let total = 0;
 let students = [];
 
-function getLearnerData(courseInfo, assnGroup, learnerSub) {
-  const result = [];
+function getLearnerData(assnGroup,learnerSub,courseInfo) {
+  students = fillStudent(assnGroup, learnerSub, courseInfo);
+  return students;
 }
 //class to create student objects so that it remains dynamic
 class Student {
@@ -159,32 +160,33 @@ function fillStudent(assnGroup, learnerSub, course) {
   students=onTime(assignArr,students, submissions);
   
   //Complete averages for student scores
-  //todo total alter score based on due date
   let score = 0;
   let max = 0;
+  let totals=0;
+  let totalm=0;
+  //Averages and total for students
   students.forEach((student) => {
     for (const grade in student) {
       for (const check in pointValues) {
         if (grade == check) {
           score = student[grade];
+          totals+=score;
           max = pointValues[check];
+          totalm+=max;
           score /= max;
           student.addAssignment(grade, score.toFixed(2));
+          
         }
       }
     }
+    totals=totals/totalm;
+    student.addTotal(totals.toFixed(3));
+    totals=0;
+    totalm=0;
   });
-  //check submission dates
-
-  // students[index].addTotal(total);
-  // total = 0;
+ 
   return students;
 }
-
-students = fillStudent(assignmentGroup, submissions, course);
-console.log(students);
-
-function getAverage(students, assnGroup) {}
 
 //makes an array of just the assignments
 function assignmentArray(assnGroup) {
@@ -203,7 +205,6 @@ function maxPoints(assignArr) {
   });
   return pointValues;
 }
-//todo fix onTime function
 function onTime(assignArr, students, learnerSub) {
   let temp=0;
   let temp2=0;
@@ -241,3 +242,6 @@ function setDate(){
   return date;
 
 }
+
+students = getLearnerData(assignmentGroup, submissions, course);
+console.log(students);
