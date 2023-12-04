@@ -254,3 +254,10 @@ function setDate() {
 
 students = getLearnerData(assignmentGroup, submissions, course);
 console.log(students);
+
+
+/*Reflection
+1.I could have wrote a full skeleton prior to beginning to write the code. I did add some comments to guide myself but did not layout the full skeleton.
+2.Checking the date was difficult to implement. What guided me through besides taking a step away from the screen and getting a breather was to console.log the date I created. This helped me realize the format was not the same. I will know this on future projects and will change the data accordingly.
+3. I would add an input form so that I could know prior to the program running that the data going in will be good data as I can add blocks and checks right away on the form.
+4. Take time for yourself and rest. A lot of solutions to issues I had came to me after I took a nap.*/
