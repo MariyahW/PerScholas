@@ -209,9 +209,10 @@ function maxPoints(assignArr) {
     }
   } catch (e) {
     for (const point in pointValues) {
-      if (pointValues[point] == 0) pointValues[point] = 3000;
+      if (pointValues[point] == 0){ pointValues[point] = 3000;
+      console.log(`Please resubmit with out assignment ${point} for true grade.`);}
     }
-    console.log(`Please resubmit with out the assignment for true grade.`);
+    
   }
   return pointValues;
 }
