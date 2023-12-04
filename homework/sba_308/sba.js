@@ -201,24 +201,17 @@ function maxPoints(assignArr) {
     pointValues[element.id] = element.points_possible;
   });
   try {
-    for (const point in pointValues) {
-      switch (point) {
-        case 0:
-          throw new Error(
-            `Please only add assignments that will count toward final grade.`
-          );
-        default:
-          break;
-      }
+    for (const point of pointValues) {
+      if (point == 0)
+        throw new Error(
+          `Please only add assignments that will count toward final grade.`
+        );
     }
   } catch (e) {
     for (const point in pointValues) {
-      switch (point) {
-        case 0:
-          delete point;
-          console.log(`The assignment has been deleted.`);
-      }
+      if (pointValues[point] == 0) pointValues[point] = 3000;
     }
+    console.log(`Please resubmit with out the assignment for true grade.`);
   }
   return pointValues;
 }
