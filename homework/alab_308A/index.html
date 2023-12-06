@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAB 308A</title>
+</head>
+<body>
+    <div id="cached-text"></div>
+    
+    <!-- I placed the script inline as to not create an error when running the js file for the other portions -->
+    <script >
+        /*Part 3. This function was completed previously as part of an excercism practice*/
+
+function primeFactors(number) {
+  let numArray = [];
+
+  for (let div = 2; number >= 2; div++) {
+    while (number % div == 0) {
+      number = number / div;
+      numArray.push(div);
+    }
+  }
+
+  return numArray;
+}
+
+const text=document.getElementById(`cached-text`);
+
+let prime =primeFactors(10000);
+
+
+
+text.textContent=prime;
+setTimeout(() => {
+    alert(`Calculation is complete`);
+}, 1000);
+
+    </script>
+</body>
+</html>
