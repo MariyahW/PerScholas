@@ -1,0 +1,42 @@
+body,html{
+    height:100%;
+    width:100%;
+}
+game-new{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: steelblue;
+
+}
+table{
+    display: flex;
+    flex-wrap: wrap;
+    height: 75%;
+    width: 50%;
+    border:solid 5px;
+    border-color: steelblue;
+}
+tbody{
+    height: 97%;
+    width: 100%;
+}
+tr{
+    display: flex;
+    justify-content: center;
+    align-content:space-evenly;
+    border: solid 2px white;
+    width:99%;
+    height:25%
+}
+td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 7.5%;
+    background-color: slategray;
+}
