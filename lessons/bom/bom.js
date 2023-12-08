@@ -19,6 +19,9 @@ setTimeout(()=>{
  isRight(guess);
   guess=window.prompt(`Don't give up try again. You have ${tries} chances left.`);
 }
+if(tries==0&&guess!=2000){
+    window.alert(`Better luck next time!`);
+}
 
 
 function isRight(guess){
@@ -45,6 +48,7 @@ function isRight(guess){
           window.alert(
             `Correct the number was ${card} congrats! It only took you ${10-tries} tries.`
           );
+           guess=2000;
           tries=0;
         }
       }
