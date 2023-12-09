@@ -58,10 +58,10 @@ function isRight(guess) {
 function backDrop(guess) {
 
   if (guess < card) {
-    game.style.backgroundColor = `red`;
+    game.style.backgroundColor = "red";
   } else if (guess > card) {
-    game.style.backgroundColor = `yellow`;
+    game.style.backgroundColor = "yellow";
   } else if (guess === card) {
-    game.style.backgroundColor = `steelblue`;
+    game.style.backgroundColor = "steelblue";
   }
 }
