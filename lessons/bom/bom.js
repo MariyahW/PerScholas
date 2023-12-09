@@ -21,7 +21,7 @@ setTimeout(() => {
       window.prompt(`Don't give up try again. You have ${tries} chances left.`)
     );
 
-    if (tries == 0 && guess != 2000) {
+    if (tries === 0 && correct=== false) {
       window.alert(`Better luck next time!`);
     }
   }
