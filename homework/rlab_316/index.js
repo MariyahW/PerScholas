@@ -50,19 +50,19 @@ menuLinks.forEach((link) => {
 });
 
 //Part 2-1
-const subMenuEl = document.getElementById(`sub-menu`);
+let subMenuEl = document.querySelector(`#sub-menu`);
 subMenuEl.style.height = `100%`;
 subMenuEl.style.backgroundColor = `var(--sub-menu-bg)`;
 subMenuEl.classList.add(`flex-around`);
 subMenuEl.style.position = `absolute`;
 subMenuEl.style.top = `0`;
 
-//2-4
+//2-4 and 2-5
 const topMenuLinks = document.querySelectorAll(`#top-menu a`);
-const windowPathName = window.location.pathname;
-//2-4
+let subs = [];
 
 topMenuEl.addEventListener(`click`, (event) => {
+  subs = [];
   event.preventDefault();
   topMenuLinks.forEach((link) => {
     if (event.target.innerHTML === link.innerHTML) {
@@ -76,9 +76,20 @@ topMenuEl.addEventListener(`click`, (event) => {
       }
 
       if (link.href.includes(`#`)) {
-        console.log(subMenuEl.style.top);
         if (subMenuEl.style.top == `0px` || subMenuEl.style.top == `0%`) {
           subMenuEl.style.top = `100%`;
+          menuLinks.forEach((element) => {
+            if (element.hasOwnProperty(`subLinks`)) {
+              if (element.text === link.innerHTML) {
+                for (const key in element) {
+                  if (key === `subLinks`) {
+                    subs.push(element.subLinks);
+                  }
+                }
+              }
+            }
+          });
+          buildSubmenu(subs);
         } else {
           subMenuEl.style.top = `0%`;
         }
@@ -88,3 +99,19 @@ topMenuEl.addEventListener(`click`, (event) => {
     }
   });
 });
+
+//2-5 helper function
+function buildSubmenu(subLinks) {
+  subMenuEl.innerHTML = ``;
+
+  subLinks.forEach((arr) => {
+    arr.forEach((link) => {
+      let addOn = document.createElement(`a`);
+      for (const key in link) {
+        if ([key] == `text`) addOn.textContent = link.text;
+        if ([key] == `href`) addOn.setAttribute(`href`, link.href);
+        subMenuEl.appendChild(addOn);
+      }
+    });
+  });
+}
