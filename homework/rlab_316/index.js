@@ -1,5 +1,3 @@
-
-
 // Menu data structure
 var menuLinks = [
   { text: "about", href: "/about" },
@@ -37,19 +35,10 @@ mainEl.style.backgroundColor = `var(--main-bg)`;
 mainEl.innerHTML = `<h1>DOM Manipulation<h1>`;
 mainEl.classList.add(`flex-ctr`);
 // Part 1-2
-const topMenuEl = document.getElementById(`top-menu`);
+const topMenuEl = document.querySelector(`#top-menu`);
 topMenuEl.style.height = `100%`;
 topMenuEl.style.backgroundColor = `var(--top-menu-bg)`;
 topMenuEl.classList.add(`flex-around`);
-
-//2-4
-topMenuEl.addEventListener(`click`, (event) => {
-  event.preventDefault();
-  console.log(event.target.innerHTML);
-  if (event.target!==`a`) {
-    return;
-  }
-});
 
 //Part 1-3
 
@@ -64,15 +53,38 @@ menuLinks.forEach((link) => {
 const subMenuEl = document.getElementById(`sub-menu`);
 subMenuEl.style.height = `100%`;
 subMenuEl.style.backgroundColor = `var(--sub-menu-bg)`;
-subMenuEl.style.flex = `flex`;
+subMenuEl.classList.add(`flex-around`);
 subMenuEl.style.position = `absolute`;
 subMenuEl.style.top = `0`;
 
 //2-4
-let topMenuLinks = [];
+const topMenuLinks = document.querySelectorAll(`#top-menu a`);
+const windowPathName = window.location.pathname;
+//2-4
 
-menuLinks.forEach((element) => {
-  for (const key in element) {
-    if (key === `href`) topMenuLinks.push(element[key]);
-  }
+topMenuEl.addEventListener(`click`, (event) => {
+  event.preventDefault();
+  topMenuLinks.forEach((link) => {
+    if (event.target.innerHTML === link.innerHTML) {
+      if (
+        document.querySelector(`.active`)?.innerHTML == event.target.innerHTML
+      )
+        link.classList.remove(`active`);
+      else {
+        document.querySelector(`.active`)?.classList.remove(`active`);
+        link.classList.add("active");
+      }
+
+      if (link.href.includes(`#`)) {
+        console.log(subMenuEl.style.top);
+        if (subMenuEl.style.top == `0px` || subMenuEl.style.top == `0%`) {
+          subMenuEl.style.top = `100%`;
+        } else {
+          subMenuEl.style.top = `0%`;
+        }
+      } else {
+        subMenuEl.style.top = `0%`;
+      }
+    }
+  });
 });
