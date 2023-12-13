@@ -4,6 +4,8 @@ const email = document.querySelector(`#regEmail`);
 const pWord = document.querySelector(`#regPW`);
 const pCheck = document.querySelector(`#regPWCheck`);
 const error = document.querySelector(`#errorDisplay`);
+let user = {};
+const users = [];
 
 reg.addEventListener(`submit`, (event) => {
   //username must be 4 characters+
@@ -23,15 +25,14 @@ reg.addEventListener(`submit`, (event) => {
       error.style.display = `none`;
     }, 2000);
     userName.focus();
-  }
-  else if(!userUnique()){
-      event.preventDefault();
-      error.textContent=`Username must have at least 2 unique characters`;
-      error.style.display=`block`;
-      setTimeout(() => {
-          error.style.display=`none`;
-      }, 2000);
-      userName.focus();
+  } else if (!userUnique()) {
+    event.preventDefault();
+    error.textContent = `Username must have at least 2 unique characters`;
+    error.style.display = `block`;
+    setTimeout(() => {
+      error.style.display = `none`;
+    }, 2000);
+    userName.focus();
   }
 
   //email validations
@@ -81,7 +82,18 @@ reg.addEventListener(`submit`, (event) => {
       error.style.display = `none`;
     }, 2000);
   }
+
+  user = {
+    username: userName.value.toLowerCase(),
+    email: email.value.toLowerCase(),
+    password: pWord.value,
+  };
+
+  users.push(user);
+  localStorage.setItem("user", JSON.stringify(users));
 });
+
+
 
 //username must not contain whitespace or special characters
 function userVal() {
@@ -91,14 +103,14 @@ function userVal() {
 
 // username has 2 unique characters
 function userUnique() {
-     let user=userName.value.toLowerCase();
+  let user = userName.value.toLowerCase();
   const unique = [...new Set(user)];
   let isUnique = 0;
   let count = 0;
   console.log(unique);
   console.log(user);
   for (let j = 0; j < unique.length; j++) {
-    for (let i = 1; i <user.length ; i++) {
+    for (let i = 1; i < user.length; i++) {
       if (unique[j] == user[i]) {
         count++;
         console.log(count);
@@ -109,7 +121,8 @@ function userUnique() {
     }
     if (isUnique >= 2) {
       return true;
-    } count=0;
+    }
+    count = 0;
   }
   return false;
 }
@@ -124,5 +137,6 @@ function passVal() {
   console.log(regEx.test(pWord.value));
   return regEx.test(pWord.value);
 }
+
 
 
