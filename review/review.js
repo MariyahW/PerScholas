@@ -155,12 +155,12 @@ const c = 15;
 const d = "Keke"
 
 console.log(a < b)
-console.log(c < b)
+console.log(c > b)
 console.log(d == d)
-console.log(d =! a)
+console.log(d != a)
 console.log(a < 15)
-console.log(a == b - c)
-console.log(c > b && a =! d)
+console.log(a + b == c)
+console.log((c > b) && (a != d))
 
 // =================================================
 //                     LOOPS
