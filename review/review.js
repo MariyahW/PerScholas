@@ -101,37 +101,45 @@ let w = joshIsLookingForWifey.search('wifey');
 // I guess we can share this pizza sentence. Use slice() to return the other half of pizza.
 const pizzaSentence = "pizza, other half of pizza"
 let rest= pizzaSentence.slice(7);
-console.log(rest);
+
 
 // Now using the pizza sentence, return only pizza (before the comma)
+let only= pizzaSentence.slice(0,5);
 
 // Okay, but who decided to go to this expensive restaurant? Yaz, Poornima, and Leshawn decided to split() the bill. Return an array separating Yaz, Poornima, and Leshawn.
 const splitTheBill = "Yaz, Poornima, and Leshawn"
+let split= splitTheBill.split(',');
 
 // OH NO! The alien invaders from earlier were so against bill splitting so they decided to split() Yaz, Poornima, and Leshawn into pieces. Using splitTheBill, return an array separating all three by characters.
-
+let ultiSplit=splitTheBill.split("");
 // Use this toLowerCase()
 const angry = "LOWER YOUR VOICE DOWN IF YOU AIN'T PAYING MY BILLS."
-// Tuan was angry today. Create a string with words that Tuan would yell out. Now lowercase it, to tell Tuan to chill out. 
+let nonAngry=angry.toLowerCase();
 
+// Tuan was angry today. Create a string with words that Tuan would yell out. Now lowercase it, to tell Tuan to chill out. 
+let Tuan='YOU SUCK';
+let tuan = Tuan.toLowerCase();
 // toUpperCase()
 const jahlunSaidToPutSomeRespectToHisName = "jahlun"
-
+let up = jahlunSaidToPutSomeRespectToHisName.toUpperCase();
 // substring()
 // on the chopping block...
 
 // Returns "ell"
 const basicGreeting = "Hello World"
-
+let el= basicGreeting.substring(1,4);
 // Returns "JavaScript"
 const ohReally = "JavaScript Substring"
-
+let js=ohReally.substring(0,10);
 // Returns aol.com
 const aslDays = "xXteoWuzHereXx@aol.com"
+let com=aslDays.substring((aslDays.length-7),(aslDays.length));
 
 // trim()
 // If only I can use this for my love handles...
 // Create a variable with a string value with some extra loving on both sides.
+let loving ='     loving        ';
+loving=loving.trim();
 
 // =================================================
 //                     BOOLEAN
@@ -146,13 +154,13 @@ const b = 10;
 const c = 15;
 const d = "Keke"
 
-// console.log(a _ b)
-// console.log(c _ b)
-// console.log(d _ d)
-// console.log(d _ a)
-// console.log(a _ 15)
-// console.log(a _ b _ c)
-// console.log(c _ b _ a _ d)
+console.log(a < b)
+console.log(c < b)
+console.log(d == d)
+console.log(d =! a)
+console.log(a < 15)
+console.log(a == b - c)
+console.log(c > b && a =! d)
 
 // =================================================
 //                     LOOPS
