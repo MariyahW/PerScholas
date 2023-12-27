@@ -168,9 +168,25 @@ console.log((c > b) && (a != d))
 
 // Ken has a headache today and he said the room has been spinning like crazy. Make Ken's room spin 10 times using FOR LOOP. Make him print a sentence.
 
+for (let index = 0; index < 10; index++) {
+  console.log('a sentence.');
+  
+}
 // Harry said that was so mean of Teo to do Ken dirty like that. Make Teo's vision spin 20 times FOR LOOP.
+let teo='spinning';
+for( let vision =0; vision <20; vision++){
+teo= 'spinning';
+}
 
 // But wait! Lisa said, while Teo is spinning 20 times. Let's make him say "I'm sorry". Print I'm sorry 20 times using a WHILE loop.
+while(teo=='spinning'){
+ 
+for( let vision =0; vision <20; vision++){
+teo= 'spinning';
+console.log(`I'm sorry`);
+}
+teo='not spinning';
+}
 
 // For the next three, look for the syntax of FOR IN and FOR OF loop. Very easy to understand syntax, and very clean :) 
 
@@ -181,32 +197,48 @@ const whateverQueenBeySaid = {
   thing3: 'gaming console'
 }
 
+for (const thing in whateverQueenBeySaid) {
+  console.log(thing);
+}
 // Using (FOR IN LOOP), print the indexes of the array.
 const lana = ['l', 'a', 'n', 'a']
 
+for( const lan in lana){
+  console.log(lana.indexOf(lana[lan]));
+}
+
 // USE (FOR OF LOOP)!
 const tia = ['teo', 'the', 'syntax', 'of', 'this', 'is', 'cleaner']
+for (const item of tia) {
+  console.log(tia.indexOf(item));
+}
 
 // Look into forEach() loop, it accepts a callback aka a function inside a function. 
 // Swathi said don't forget each person. No person left behind! Use forEach() to iterate over the array perscholas. Inside the function, create a variable with the string "PS". Print their name in the console concatenated with the variable. 
 const perscholas = ['Amira', 'Arely', 'Jonathan']
+
+perscholas.forEach(name => {
+  let string = "PS";
+  console.log(name+' '+string);
+  
+});
 
 // =================================================
 //                     ARRAYS
 // =================================================
 
 // Look up the following: Make a note of what each one of these methods do
-// push()
-// pop()
-// unshift()
-// shift()
-// concat()
-// splice()
-// slice()
-// sort()
-// includes()
-// indexOf()
-// length
+// push() -adds to the end
+// pop() - removes from the end
+// unshift() -adds to the beginning
+// shift() - removes from the beginning
+// concat() - joins to arrays
+// splice() - removes item(s) from the original array
+// slice() - returns a new array with selected items
+// sort() -changes original array and order them by utf-16 unless a function is added for sorting
+// includes() - check if the item is inside of the array
+// indexOf() - find the first index of an item
+// length - returns the numerical length
 
 const fruits = ['apple', 'banana', 'orange']
 
