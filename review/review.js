@@ -243,29 +243,48 @@ perscholas.forEach(name => {
 const fruits = ['apple', 'banana', 'orange']
 
 // Print banana
+console.log(fruits[2]);
 
 // Let's turn it up a notch. I won't tell you what array methods to use. 
 
 // Join all the elements of the array into a string separated by a space.
+let newFruits = JSON.stringify(fruits);
+newFruits =newFruits.replace(`["`, " ");
+newFruits=newFruits.replace(/","/g, ` `);
+newFruits=newFruits.replace(`"]`, ` `);
+newFruits=newFruits.trim();
+console.log(newFruits);
 
 // Remove orange
+fruits.pop();
 
 // Add strawberry, kiwi, and grapes at the end
+fruits.push('strawberry', 'kiwi' ,'grapes');
 
 // Remove apple
-
+fruits.shift();
 // Add mango at the beginning of the array
-
+fruits.unshift(`mango`);
 // Add lemon, and grapefruit between mango and banana
+fruits.splice(1,0,`lemon`, `grapefruit`);
 
 // Remove banana and strawberry
+fruits.splice(3,2);
 
 // Create a new array called exoticFruits. Add 3 exotic fruits inside of this array. Create a new variable and assign it with the value of concatinating fruits array and exoticFruits array.
 
+const exoticFruits=[`papaya`, `starfruit`, `dorian`];
+const fruityArr = exoticFruits.concat(fruits);
+
 // Print the last two exotic fruits without altering the newly concatenated array.
+
+  for(let count=exoticFruits.length; count>=exoticFruits.length-1; count--)
+  console.log(exoticFruits[count-1]);
 
 // Monalissa said she needs help re-organizing her items in alphabetical order.
 const monalissaIsMessy = ["pencil", "paper", "notebook", "computer"]
+monalissaIsMessy.sort();
+
 
 // Kevin accidentally stepped into the mirror world and needs help reversing his words.
 const mirrorMirrorOnTheWall = ["all", "them", "of", "greatest", "the", "is", "who"]
