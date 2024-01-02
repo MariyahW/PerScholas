@@ -288,24 +288,43 @@ monalissaIsMessy.sort();
 
 // Kevin accidentally stepped into the mirror world and needs help reversing his words.
 const mirrorMirrorOnTheWall = ["all", "them", "of", "greatest", "the", "is", "who"]
+mirrorMirrorOnTheWall.reverse();
 
 // ===== HIGHER ORDER METHODS =====
 // Rafael said he''s trying to stop cursing so much, and he wants to start with his text messages. Help him write code to eliminate the badword in his sentences. Must return a string sentence. Must use filter(). :) 
 const RafaelNoBadWords = "I am so tired of this badword food. I do not want this badword badword food."
 
+
+let noBads =RafaelNoBadWords.split(" ").filter(bad);
+//  noBads
+function bad(word){
+  if(word!='badword')
+  {
+    return word;
+  }
+}
+
+console.log(JSON.stringify(noBads));
 // Man math is hard. Let's make our computer do it for us. Use reduce() to find the total of the numbers in numbersToAddUp
 const numbersToAddUp = [99, 5677, 232, 84, 2, 231]
+let nums =numbersToAddUp.reduce(sum);
+function sum( total, num){
+  return total+num;
+}
 
 // ===== SPREAD OPERATOR ===== 
 
 // Create a variable and assign a value of a copied array using the spread operator
+let copy =[...numbersToAddUp];
 
 // Create two arrays with any elements and connect both of them using the spread operator. Save the connected arrays into a new variable.
+let merge = [...numbersToAddUp,...monalissaIsMessy];
 
 // Using the variable with the newly connected arrays, use spread operator to add something at the end.
+merge=[...merge, ...mirrorMirrorOnTheWall];
 
 // Using the variable with the newly connected arrays, use spread operator to add something at the beginning.
-
+merge=[...monalissaIsMessy, ...merge];
 // ===== ACCESS =====
 
 // Donut Shopping
@@ -331,7 +350,9 @@ const donutShop =[
 ]
 
 // Anthony wants applecrumble. Print please!
+console.log(donutShop[1][0][1]);
 // Tosi wants ihatethis. :) Print!
+console.log(donutShop[2][0][0][1][0]);
 
 // =================================================
 //                     IF/ELSE
@@ -339,10 +360,32 @@ const donutShop =[
 
 // Teo is a person. I would hope so...
 // Check if Teo is a person. If true, print 'Teo is a person!' if not then print 'Teo is not a person!'
+if(teo===`person`){
+  console.log(`Teo is a person!`);
+}else{
+  console.log(`Teo is not a person!`);
+}
 // If Teo is a person, check to see if he is a male or a female. If male, print 'You got it right!' if not then print 'Wrong. Teo is going to remove you from the class.'.
+if(teo===`person`){
+  if(teo.includes(`male`))
+  console.log(`YOu got it right!`);
+else{
+  console.log('Wrong. Teo is going to remove you from the class.');
+}
+}
 // If male, check to see if Teo is hungry. If Teo is 'hungry' then print 'Let's buy Teo some tacos!'. If Teo is 'not hungry' then print 'He doesn't need to eat.'. Anything else, print 'If Teo is not hungry, am I hungry?'
+if(teo===`person`){
+  if(teo.includes(`male`))
+    if(teo.includes(`hungry`))
+     console.log(`Let's buy Teo some tacos!`);
+    else{
+      console.log(`He doesn't need to eat.`)
+    }
 
+}
 // Create a if/else ternary to check if Gustavo is the coolest. If coolest, print 'You got that right!', else print 'James wants to argue. He says he's the best!'
+let gustavo =" ";
+gustavo =='coolest'? console.log('You got that right!'):console.log(`James wants to argue. He says he's the best!`);
 
 // =================================================
 //                     FUNCTIONS
@@ -351,11 +394,26 @@ const donutShop =[
 // Don't forget to call your functions :)
 
 // Create a function called sayGreeting and PRINT 'Hello, ma'amsir!'
-
+function sayGreeting(){
+  console.log(`Hello, ma'amsir!`);
+}
+sayGreeting();
 // Create a function that takes a string as a parameter. PRINT 'This is my (STRING)'. Please replace the (STRING) with the parameter. Don't play with me haha.
 
+function mine(string){
+  console.log(`This is my ${string}.`);
+}
 
+mine(`sentence`);
 // Create a function called add that takes in three number parameters. Create 3 variables and assign numerical values to them. Invoke your add() and pass in those three variables as arguments.
+
+function add(num, num2, num3){
+  return num+num2+num3;
+}
+let z=1;
+let x=5;
+let v =10;
+v= add(a,b,c);
 
 // Create a function called fightClub() that accepts a name parameter.  If the name:
 // 'Teo' RETURN '1st rule: You do not talk about Fight Club.'
@@ -364,26 +422,58 @@ const donutShop =[
 // 'Devin' RETURN '4th rule: Only two guys to a fight.'
 // Anything else, RETURN 'No shirts
 
+function fightClub(name){
+  switch (name) {
+    case 'Teo':
+      return `1st rule: You do not talk about Fight Club.`;
+    case 'Manara':
+      return '2nd rule: YOU DO NOT TALK ABOUT FIGHT CLUB.';
+    case 'Liv' :
+      return '3rd rule: If someone yells "Stop!", goes limp, taps out, the fight is over.'
+    case 'Devin':
+       return '4th rule: Only two guys to a fight.'
+    default:
+      return `No shirts`
+      
+  }
+}
 // Create a function called hello() that prints 'Hello'. Return an anonymous function inside hello() and have it print 'Goodbye'. Invoke your hello function in some way to see Hello and Goodbye in the console.
 
+  function hello(){
+   
+    console.log(`Hello`);
+    return ( function (){
+      console.log(`Goodbye`);
+    });
+  }
+ let plant = hello();
+ console.log(plant())
 // Create a function expression with your first name as the variable and then print your first and last name
-
+function names(first){
+  console.log(`${first} watson`);
+}
+names('mariyah');
 // Create an arrow function that accepts a number and have it return that number doubled
-
+ test = (num)=>{
+  return 2*num;
+}
+console.log(test(3));
 // =================================================
 //                     OBJECTS
 // =================================================
 
 // Create an object and call it human. Add a name, age, and location property. Give the properties values.
-
+human={name:`mariyah`,
+age: 32,
+location: 'Baltimore, MD'}
 
 
 
 // Access the name using dot notation
 
-
+let accName= human.name;
 // Access the age using square brackets
-
+let accAge=human[age];
 // Use object destructuring to access location
 
 // ACCESS Granted
