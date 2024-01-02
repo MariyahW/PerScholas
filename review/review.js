@@ -473,8 +473,9 @@ location: 'Baltimore, MD'}
 
 let accName= human.name;
 // Access the age using square brackets
-let accAge=human[age];
+let accAge=human[`age`];
 // Use object destructuring to access location
+const {location}=human;
 
 // ACCESS Granted
 const bulbasaur = {
@@ -494,19 +495,26 @@ const bulbasaur = {
 }
 
 // Print overgrow
+console.log(bulbasaur.abilities[0].ability);
+
 
 // Print cut
-
+console.log(bulbasaur.moves[2]);
 
 // Print Bulbahhhh!!!!!
+let arg = bulbasaur.sound();
+console.log(arg);
 
 
 // Add a height of 7 to bulbasaur using the dot notation. (Don't change bulbasaur object manually)
+bulbasaur.height =7;
 
 // Add a property called order and assign it a value of 1 using the square brackets. (Don't change bulbasaur object manually)
+bulbasaur[`order`]=1;
 
 // Print an array that contains every single properties in bulbasaur
-
+console.log(Object.keys(bulbasaur));
 // Print every single properties one by one in the console
 
 // Print an array that contains every single values in bulbasaur
+console.log(Object.values(bulbasaur));
