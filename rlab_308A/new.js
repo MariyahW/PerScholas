@@ -54,28 +54,28 @@ const API_KEY =
  * - Add a call to this function to the end of your initialLoad function above to create the initial carousel.
  */
 function call() {
-  event.preventDefault();
-  Carousel.clear();
-  infoDump.innerHTML = "";
-  let ref = event.target.value;
-  fetch(
-    `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${ref}&api_key=${API_KEY}`
-  )
-    .then((res) => res.json())
-    .then((newData) => {
-      newData.forEach((element) => {
-        let car = Carousel.createCarouselItem(element.url, "...", ref);
-        Carousel.appendCarousel(car);
+    event.preventDefault();
+    Carousel.clear();
+    infoDump.innerHTML = "";
+    let ref = event.target.value;
+    axios
+      .get(
+        `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${ref}&api_key=${API_KEY}`
+      )
+      .then((newData) => {
+        newData.data.forEach((element) => {
+          let car = Carousel.createCarouselItem(element.url, "...", ref);
+          Carousel.appendCarousel(car);
+        });
+        Carousel.start();
+        let header = document.createElement("h2");
+        header.innerHTML = newData.data[0].breeds[0].name;
+        let para = document.createElement("p");
+        para.innerHTML = newData.data[0].breeds[0].description;
+        infoDump.appendChild(header);
+        infoDump.appendChild(para);
       });
-      Carousel.start();
-      let header = document.createElement("h2");
-      header.innerHTML = newData[0].breeds[0].name;
-      let para = document.createElement("p");
-      para.innerHTML = newData[0].breeds[0].description;
-      infoDump.appendChild(header);
-      infoDump.appendChild(para);
-    });
-}
+  }
 
 /**
  * 3. Fork your own sandbox, creating a new one named "JavaScript Axios Lab."
