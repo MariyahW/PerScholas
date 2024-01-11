@@ -7,7 +7,7 @@ const breedSelect = document.getElementById("breedSelect");
 // The information section div element.
 const infoDump = document.getElementById("infoDump");
 // The progress bar div element.
-const progressBar = document.getElementById("progressBar");
+const progressBar = document.querySelector(".progress-bar-top");
 // The get favourites button element.
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
 
@@ -125,6 +125,22 @@ function call() {
  *   once or twice per request to this API. This is still a concept worth familiarizing yourself
  *   with for future projects.
  */
+
+const prog ={
+  onDownloadProgress: function updateProgress(ProgressEvent){
+
+    let percent =Math.round(ProgressEvent.progress*100);
+    progressBar.style.width=percent;
+    console.log(percent);
+  }
+  
+}
+
+
+
+
+
+
 
 /**
  * 7. As a final element of progress indication, add the following to your axios interceptors:

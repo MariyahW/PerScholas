@@ -25,20 +25,18 @@ const API_KEY =
  * This function should execute immediately.
  */
 (async function initialLoad() {
-  fetch("https://api.thecatapi.com/v1/breeds")
-    .then((response) => response.json())
-    .then((data) =>
-      data.forEach((cat) => {
-        let catty = document.createElement(`option`);
-        catty.innerHTML = cat.name;
-        catty.value = cat.id;
-        breedSelect.append(catty);
-      })
-    );
+  axios.get("https://api.thecatapi.com/v1/breeds").then((res) => {
+    res.data.forEach((cat) => {
+      let catty = document.createElement(`option`);
+      catty.innerHTML = cat.name;
+      catty.value = cat.id;
+      breedSelect.append(catty);
+    });
+  });
 
   // .catch(function (error) {});
 })();
-
+console.log(progressBar);
 breedSelect.addEventListener("change", call);
 
 /**
@@ -55,25 +53,39 @@ breedSelect.addEventListener("change", call);
  * - Each new selection should clear, re-populate, and restart the Carousel.
  * - Add a call to this function to the end of your initialLoad function above to create the initial carousel.
  */
+axios.interceptors.request.use(function (config) {
+  config.headers["startTime"] = new Date().getTime();
+  console.log(`Request began: ${config.headers[`startTime`]} miliseconds`);
+  return config;
+});
+axios.interceptors.response.use(function (response) {
+  const currentTime = new Date().getTime();
+  const startTime = response.config.headers["startTime"];
+  response.headers["request-duration"] = currentTime - startTime;
+  console.log(response.headers);
+  return response;
+});
+
 function call() {
   event.preventDefault();
   Carousel.clear();
   infoDump.innerHTML = "";
   let ref = event.target.value;
-  fetch(
-    `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${ref}&api_key=${API_KEY}`
-  )
-    .then((res) => res.json())
+  axios
+    .get(
+      `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${ref}&api_key=${API_KEY}`,
+      prog
+    )
     .then((newData) => {
-      newData.forEach((element) => {
+      newData.data.forEach((element) => {
         let car = Carousel.createCarouselItem(element.url, "...", ref);
         Carousel.appendCarousel(car);
       });
       Carousel.start();
       let header = document.createElement("h2");
-      header.innerHTML = newData[0].breeds[0].name;
+      header.innerHTML = newData.data[0].breeds[0].name;
       let para = document.createElement("p");
-      para.innerHTML = newData[0].breeds[0].description;
+      para.innerHTML = newData.data[0].breeds[0].description;
       infoDump.appendChild(header);
       infoDump.appendChild(para);
     });
@@ -113,6 +125,14 @@ function call() {
  *   once or twice per request to this API. This is still a concept worth familiarizing yourself
  *   with for future projects.
  */
+const prog = {
+  onDownloadProgress: function updateProgress(ProgressEvent) {
+    console.log(ProgressEvent);
+    let percent = Math.round(ProgressEvent.progress * 100);
+    progressBar.style.width = `${percent}%`;
+    progressBar.textContent = `${percent}%`;
+  },
+};
 
 /**
  * 7. As a final element of progress indication, add the following to your axios interceptors:
