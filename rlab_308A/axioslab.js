@@ -53,6 +53,20 @@ const API_KEY =
  * - Each new selection should clear, re-populate, and restart the Carousel.
  * - Add a call to this function to the end of your initialLoad function above to create the initial carousel.
  */
+axios.interceptors.request.use(function (config) {
+  config.headers["startTime"] = new Date().getTime();
+  console.log(`Request began: ${config.headers[`startTime`]} miliseconds`);
+  return config;
+});
+axios.interceptors.response.use(function (response) {
+  const currentTime = new Date().getTime();
+  const startTime = response.config.headers["startTime"];
+  response.headers["request-duration"] = currentTime - startTime;
+  console.log(response.headers);
+  return response;
+});
+
+
 function call() {
     event.preventDefault();
     Carousel.clear();
