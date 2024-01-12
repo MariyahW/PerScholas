@@ -15752,6 +15752,9 @@ function createLine(response) {
   });
   myChart = new _auto.default(canvas, {
     type: "line",
+    options: {
+      color: "black"
+    },
     data: {
       labels: data.map(function (row) {
         return row.date;
@@ -15760,7 +15763,10 @@ function createLine(response) {
         label: "Pricing History",
         data: data.map(function (row) {
           return row.priceUsd;
-        })
+        }),
+        fill: true,
+        // backgroundColor:'#989788',
+        color: 'black'
       }]
     }
   });
@@ -15797,7 +15803,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57308" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

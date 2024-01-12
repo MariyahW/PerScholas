@@ -123,26 +123,33 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.clearDiv = clearDiv;
 exports.getChange = getChange;
 exports.getPrice = getPrice;
 exports.getSymbol = getSymbol;
+// const sect2 = document.getElementById('list-item-2');
+
 function getPrice(response) {
   var data = response.data.data;
   var tag1 = document.createElement('h4');
-  tag1.innerHTML = "The current price of ".concat(coin.id.toUpperCase(), ": ").concat(data.priceUsd);
+  tag1.innerHTML = "The current price of ".concat(data.name, ": ").concat(data.priceUsd);
+  console.log(data);
   return tag1;
 }
 function getChange(response) {
   var data = response.data.data;
   var tag2 = document.createElement('h4');
-  tag2.innerHTML = "".concat(coin.id.toUpperCase(), " 24hr Change: ").concat(data.priceChange);
+  tag2.innerHTML = "".concat(data.name, " 24hr Change: ").concat(data.changePercent24Hr, "%");
   return tag2;
 }
 function getSymbol(response) {
   var data = response.data.data;
   var tag3 = document.createElement('h4');
-  tag3.innerHTML = " ".concat(coin.id.toUpperCase(), " symbol: ").concat(data.symbol);
+  tag3.innerHTML = " ".concat(data.name, " symbol: ").concat(data.symbol);
   return tag3;
+}
+function clearDiv(section) {
+  section.innerHTML = '';
 }
 },{}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -169,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57308" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

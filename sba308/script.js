@@ -19,7 +19,8 @@ const api_key = `83afe97e-5f1a-495c-931d-45918a68d87c`;
   });
 })();
 
-form.addEventListener('change',fillLine, priceUsd);
+form.addEventListener('change',fillLine);
+form.addEventListener('change',priceUsd);
 
  function fillLine(event) {
    event.preventDefault();
@@ -38,10 +39,10 @@ form.addEventListener('change',fillLine, priceUsd);
 
    axios.get(`https://api.coincap.io/v2/assets/${coin}`)
    .then(response=>{
-      console.log(pricing.getPrice(response));
-      // sect2.append(pricing.getPrice(response));
-      // sect2.append(pricing.getChange(response));
-      // sect2.append(pricing.getSymbol(response));
+      pricing.clearDiv(sect2);
+      sect2.append(pricing.getPrice(response));
+      sect2.append(pricing.getChange(response));
+      sect2.append(pricing.getSymbol(response));
    
    })
  }

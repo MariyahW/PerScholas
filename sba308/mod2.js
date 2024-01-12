@@ -13,16 +13,23 @@ data.forEach(element => {
 
   myChart =new Chart(canvas, {
     type: "line",
+    options: {color: "black"},
+   
     data: {
       labels: data.map((row) => row.date),
+     
       datasets: [
         {
           label: "Pricing History",
           data: data.map((row) => row.priceUsd),
+          fill: true,
+          // backgroundColor:'#989788',
+          color: 'black',
         },
       ],
     },
   });
+ 
   }
 
   //Clears chart so that it may be used again
