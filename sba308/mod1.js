@@ -1,5 +1,5 @@
 
-import axios from "axios";
+
 const api_key='` 83afe97e-5f1a-495c-931d-45918a68d87c';
 
 export default function createOpt(coin){
