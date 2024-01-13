@@ -3,44 +3,32 @@
 ## Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
+- [Installing](#installing)
+- [Author](#author)
+
 
 ## About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## Getting Started <a name = "getting_started"></a>
-
-Welcome to CryptoInfo, your go-to platform for comprehensive information on cryptocurrencies. Whether you're a seasoned trader or a curious enthusiast, our web application is designed to provide you with up-to-date details on various cryptocurrencies. Follow these simple steps to get started:
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+Welcome to CryptoInfo, the platform built for comprehensive information on cryptocurrencies. My web application is designed to provide you with up-to-date details on various cryptocurrencies. 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+Clone Repository: Clone the CryptoInfo repository to your local machine.
 
-Say what the step will be
+git clone https://github.com/MariyahW/PerScholas/tree/main/sba308
 
-```
-Give the example
-```
+Navigate to Project Directory: Change your working directory to the project folder.
 
-And repeat
+cd crypto-info
 
-```
-until finished
-```
+Install Dependencies: Install the necessary dependencies.
 
-End with an example of getting some data out of the system or using it for a little demo.
+npm init -y
+npm i axios
+npm install chart.js
 
-## Usage <a name = "usage"></a>
+### Author 
 
-Add notes about how to use the system.
+MariyahW
+- [Github](https://github.com/MariyahW)
+- [Website](https://mariyahwatson.com)
