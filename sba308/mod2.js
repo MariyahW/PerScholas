@@ -17,6 +17,7 @@ data.forEach(element => {
    
     data: {
       labels: data.map((row) => row.date),
+      
      
       datasets: [
         {
