@@ -65,4 +65,8 @@ router
     else next();
   });
 
+//   router.route('/:id/posts').get((req,res,next)=>{
+
+//   })
+
 module.exports = router;

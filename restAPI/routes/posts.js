@@ -12,7 +12,22 @@ const posts = require("../data/posts");
 router
   .route("/")
   .get((req, res) => {
+    const uID= req.query['userId'];
+    // console.log(uID);
+    const arr=[];
+    const isThere = posts.findIndex(p => p.userId==uID);
+    console.log(isThere)
+    if(isThere=>0){
+        posts.forEach(post=>{
+            if(post.userId==uID){
+                arr.push(post)
+            }
+        })
+        res.json(arr);
+    }//if userID is not valid send all post
+
     res.json(posts);
+    
   })
   .post((req, res) => {
     if (req.body.userId && req.body.title && req.body.content) {
@@ -59,5 +74,9 @@ router
     if (post) res.json(post);
     else next();
   });
+
+
+
+
 
 module.exports = router;
