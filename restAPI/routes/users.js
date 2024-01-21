@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const users = require("../data/users");
+const posts = require("../data/posts");
 
 // This is the same code as the previous example!
 // We've simply changed "app" to "router" and
@@ -37,9 +38,21 @@ router
   .route("/:id")
   .get((req, res, next) => {
     const user = users.find((u) => u.id == req.params.id);
-    if (user) res.json(user);
-    else next();
-  })
+    console.log(user.id);
+    const arr=[];
+    const isThere = posts.findIndex(p => p.id==req.params.id);
+   
+    if(isThere=>0){
+        posts.forEach(post=>{
+            if(post.userId==user.id){
+                arr.push(post)
+            }
+        })
+        arr.unshift(user);
+    res.json(arr);
+    // else next();
+  }
+ } )
   .patch((req, res, next) => {
     const user = users.find((u, i) => {
       if (u.id == req.params.id) {
@@ -65,8 +78,6 @@ router
     else next();
   });
 
-//   router.route('/:id/posts').get((req,res,next)=>{
 
-//   })
 
 module.exports = router;

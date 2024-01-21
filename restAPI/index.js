@@ -29,7 +29,7 @@ ${time.toLocaleTimeString()}: Received a ${req.method} request to ${req.url}.`
 });
 
 // Valid API Keys.
-apiKeys = ["perscholas", "ps-example", "hJAsknw-L198sAJD-l3kasx"];
+apiKeys = ["perscholas", "ps-example", "hJAsknw-L198sAJD-l3kasx", "pkey"];
 
 // New middleware to check for API keys!
 // Note that if the key is not verified,
