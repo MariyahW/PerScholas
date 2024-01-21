@@ -19,6 +19,7 @@ router
   router.route('/:id').get((req, res)=>{
     const id = req.params.id;
     const isThere = comments.findIndex(c =>c.id);
+    console.log(isThere)
     if(isThere>=0){
         comments.forEach(comment=>{
             if(comment.id==id){
@@ -43,8 +44,7 @@ router
     if(isThere>=0){
         comments.forEach(comment=>{
             if(comment.id==id){
-                comment.body=req.body.body;
-                res.json(comment);
+               //need to add code to remove
             }
         })
     }
