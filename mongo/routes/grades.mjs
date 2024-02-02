@@ -31,9 +31,7 @@ class_id:newDocument.class_id, learner_id:newDocument.learner_id});
 // Get a single grade entry
 router.get("/:id", async (req, res) => {
   let foundGrade = await Grade.findById(req.params.id);
-  res.status(200).json({
-    data: foundGrade
-  })
+  res.send("")
 
     // let collection = await db.collection('grades');
     // let query = {_id: new ObjectId(req.params.id)};
@@ -163,13 +161,15 @@ router.patch("/class/:id", async (req, res) => {
   
   // Delete a class
   router.delete("/class/:id", async (req, res) => {
-    let collection = await db.collection("grades")
+    
     let query = { class_id: Number(req.params.id) }
-  
-    let result = await collection.deleteMany(query)
-  
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    await Grade.deleteMany(query);
+    res.send("")
+    
+    
+    
+    
+    lass_id: Number(req.params.id) 
   })
 
 export default router
