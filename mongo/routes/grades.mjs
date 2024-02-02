@@ -31,7 +31,7 @@ class_id:newDocument.class_id, learner_id:newDocument.learner_id});
 // Get a single grade entry
 router.get("/:id", async (req, res) => {
   let foundGrade = await Grade.findById(req.params.id);
-  res.send("")
+  res.status(200).json({foundGrade});
 
     // let collection = await db.collection('grades');
     // let query = {_id: new ObjectId(req.params.id)};
@@ -44,15 +44,21 @@ router.get("/:id", async (req, res) => {
 
 // Add a score to a grade entry
 router.patch("/:id/add", async (req, res) => {
-    let collection = await db.collection("grades");
-    let query = { _id: ObjectId(req.params.id) };
+   
+  let foundGrade = await Grade.findById(req.params.id);
+  foundGrade.scores.push(req.body)
+  await Grade.findByIdAndUpdate(req.params.id, {scores:foundGrade.scores})
+  res.status(200).json(foundGrade);
+
+  // let collection = await db.collection("grades");
+  //   let query = { _id: ObjectId(req.params.id) };
   
-    let result = await collection.updateOne(query, {
-      $push: { scores: req.body }
-    });
+  //   let result = await collection.updateOne(query, {
+  //     $push: { scores: req.body }
+  //   });
   
-    if (!result) res.send("Not found").status(404);
-    else res.send(result).status(200);
+  //   if (!result) res.send("Not found").status(404);
+  //   else res.send(result).status(200);
   })
   
   // Remove a score from a grade entry
@@ -166,10 +172,6 @@ router.patch("/class/:id", async (req, res) => {
     await Grade.deleteMany(query);
     res.send("")
     
-    
-    
-    
-    lass_id: Number(req.params.id) 
   })
 
 export default router
