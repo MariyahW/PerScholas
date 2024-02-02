@@ -1,58 +1,64 @@
-import  express from 'express'
-import db from "../db/conn.mjs"
-import { ObjectId } from 'mongodb'
+import  express from 'express';
+import db from "../db/conn.mjs";
+import { ObjectId } from 'mongodb';
+import Grade from '../models/grade.mjs';
 
-const router = express.Router()
+const router = express.Router();
 
 // Create a single grade entry
 router.post('/', async (req,res) =>{
-    let collection = await db.collection('grades')
-    let newDocument = req.body
+    let collection = await db.collection('grades');
+    let newDocument = req.body;
 
     if (newDocument.student_id) {
-        newDocument.learner_id = newDocument.student_id
-        delete newDocument.student_id
+        newDocument.learner_id = newDocument.student_id;
+        delete newDocument.student_id;
     }
 
-    let result = await collection.insertOne(newDocument)
-    res.send(result).status(204)
+    let result = await collection.insertOne(newDocument);
+    res.send(result).status(204);
 })
 
 // Get a single grade entry
 router.get("/:id", async (req, res) => {
-    let collection = await db.collection('grades')
-    let query = {_id: new ObjectId(req.params.id)}
-    let result = await collection.findOne(query)
+  let foundGrade = await Grade.findById(req.params.id);
+  res.status(200).json({
+    data: foundGrade
+  })
 
-    // minor error handling
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    // let collection = await db.collection('grades');
+    // let query = {_id: new ObjectId(req.params.id)};
+    // let result = await collection.findOne(query);
+
+    // // minor error handling
+    // if (!result) res.send("Not found").status(404);
+    // else res.send(result).status(200);
 })
 
 // Add a score to a grade entry
 router.patch("/:id/add", async (req, res) => {
-    let collection = await db.collection("grades")
-    let query = { _id: ObjectId(req.params.id) }
+    let collection = await db.collection("grades");
+    let query = { _id: ObjectId(req.params.id) };
   
     let result = await collection.updateOne(query, {
       $push: { scores: req.body }
-    })
+    });
   
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    if (!result) res.send("Not found").status(404);
+    else res.send(result).status(200);
   })
   
   // Remove a score from a grade entry
   router.patch("/:id/remove", async (req, res) => {
-    let collection = await db.collection("grades")
-    let query = { _id: ObjectId(req.params.id) }
+    let collection = await db.collection("grades");
+    let query = { _id: ObjectId(req.params.id) };
   
     let result = await collection.updateOne(query, {
       $pull: { scores: req.body }
     })
   
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    if (!result) res.send("Not found").status(404);
+    else res.send(result).status(200);
   });
 
   // Delete a single grade entry
