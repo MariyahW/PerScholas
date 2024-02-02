@@ -18,3 +18,33 @@ Git Commands
     git branch -m current newbranch - Change branch name
     git push -u origin <branch name>- pushes to github do after set up repo in github so can add remote config line
     git fetch or pull - takes from github
+THis is text to commit for practice
+Git Commands +
+ 
+    git init - create a repo
+    git status- Check status of the work we have done inside of the folder
+    touch <filename> - Create a file
+    git add filename - used to stage work from the work area to the staging area
+    git commit  -m "Description" - Create history of the work
+    git log - Check the list of commits
+    ===============================================================
+    git branch - List all branches (current branch will have an*)
+    git branch branchname - Creates a new branch (no spaces in names)
+    git switch branchname - Changes branch to chosen branchname
+
+    If merging go back to branch you want to merge for example from newfruit
+    back to main
+    git merge branch - merge branch to the branch your on
+    git branch -m current newbranch - Change branch name
+    git push -u origin <branch name>- pushes to github do after set up repo in github so can add remote config line
+    git fetch or pull - takes from github
+=======================================================================================
+npm init -y - create package.json
+
+========================================================= TYPESCRIPT
+Npm i typescript
+
+npx tsc --init --rootdir src --outdir lib |-Create your typescript config file
+create src file - this is where typescript files will work
+in src file create index.ts
+npx tsc --watch - this seems to act as a compiler 
