@@ -63,15 +63,22 @@ router.patch("/:id/add", async (req, res) => {
   
   // Remove a score from a grade entry
   router.patch("/:id/remove", async (req, res) => {
-    let collection = await db.collection("grades");
-    let query = { _id: ObjectId(req.params.id) };
+
+    let foundGrade = await Grade.findById(req.params.id);
+    foundGrade.scores.splice(req.body,1)
+    await Grade.findByIdAndUpdate(req.params.id, {scores:foundGrade.scores})
+    res.status(200).json(foundGrade);
   
-    let result = await collection.updateOne(query, {
-      $pull: { scores: req.body }
-    })
+
+    // let collection = await db.collection("grades");
+    // let query = { _id: ObjectId(req.params.id) };
   
-    if (!result) res.send("Not found").status(404);
-    else res.send(result).status(200);
+    // let result = await collection.updateOne(query, {
+    //   $pull: { scores: req.body }
+    // })
+  
+    // if (!result) res.send("Not found").status(404);
+    // else res.send(result).status(200);
   });
 
   // Delete a single grade entry
@@ -154,15 +161,22 @@ router.get("/class/:id", async (req,res) => {
 
 // Update a class id
 router.patch("/class/:id", async (req, res) => {
-    let collection = await db.collection("grades")
-    let query = { class_id: Number(req.params.id) }
+
+  let search = {class_id:Number(req.params.id)};
+  let Class = await Grade.find(search);
+
+  await Grade.updateMany(search, {class_id:req.body})
+  res.status(200).json("");
+
+    // let collection = await db.collection("grades")
+    // let query = { class_id: Number(req.params.id) }
   
-    let result = await collection.updateMany(query, {
-      $set: { class_id: req.body.class_id }
-    })
+    // let result = await collection.updateMany(query, {
+    //   $set: { class_id: req.body.class_id }
+    // })
   
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    // if (!result) res.send("Not found").status(404)
+    // else res.send(result).status(200)
   })
   
   // Delete a class
