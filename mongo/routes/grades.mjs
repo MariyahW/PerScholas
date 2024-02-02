@@ -5,18 +5,27 @@ import Grade from '../models/grade.mjs';
 
 const router = express.Router();
 
+//First 50 grades
+router.get('/', async (req, res)=>{
+let grades = await Grade.find().limit(50);
+res.status(200).json({data:grades});
+
+})
+
+
 // Create a single grade entry
 router.post('/', async (req,res) =>{
-    let collection = await db.collection('grades');
-    let newDocument = req.body;
+    let newDocument= req.body;
+ await  Grade.create({scores:newDocument.scores,
+class_id:newDocument.class_id, learner_id:newDocument.learner_id});   
+  res.status(200);
+  
+  // let collection = await db.collection('grades');
+  
+  // let newDocument = req.body;
 
-    if (newDocument.student_id) {
-        newDocument.learner_id = newDocument.student_id;
-        delete newDocument.student_id;
-    }
-
-    let result = await collection.insertOne(newDocument);
-    res.send(result).status(204);
+    // let result = await collection.insertOne(newDocument);
+    // res.send(result).status(204);
 })
 
 // Get a single grade entry
@@ -63,12 +72,18 @@ router.patch("/:id/add", async (req, res) => {
 
   // Delete a single grade entry
   router.delete("/:id", async (req, res) => {
-    let collection = await db.collection("grades");
-    let query = { _id: ObjectId(req.params.id) };
-    let result = await collection.deleteOne(query);
+  await Grade.findByIdAndDelete(req.params.id);
+   
+    res.status(204).json({
+      data: "Item was deleted"
+    })
+    
+    // let collection = await db.collection("grades");
+    // let query = { _id: ObjectId(req.params.id) };
+    // let result = await collection.deleteOne(query);
   
-    if (!result) res.send("Not found").status(404);
-    else res.send(result).status(200);
+    // if (!result) res.send("Not found").status(404);
+    // else res.send(result).status(200);
   });
 
 // Student/Learner route for backwards compatibility
@@ -78,41 +93,59 @@ router.get("/student/:id", async (req, res) => {
 
 // Get a learner's grade data
 router.get("/learner/:id", async (req, res) => {
-    let collection = await db.collection("grades")
-    let query = { learner_id: Number(req.params.id) }
+let search = {learner_id:Number(req.params.id)};
+  let Learner = await Grade.find(search);
+  res.status(200).json({
+    data: Learner
+  })
+
+    // let collection = await db.collection("grades")
+    // let query = { learner_id: Number(req.params.id) }
     
-    // Check for class_id parameter
-    if (req.query.class) query.class_id = Number(req.query.class)
+    // // Check for class_id parameter
+    // if (req.query.class) query.class_id = Number(req.query.class)
   
-    let result = await collection.find(query).toArray()
+    // let result = await collection.find(query).toArray()
   
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+    // if (!result) res.send("Not found").status(404)
+    // else res.send(result).status(200)
   })
 
 // Delete a learner's grade data
 router.delete("/learner/:id", async (req, res) => {
-    let collection = await db.collection("grades")
-    let query = { learner_id: Number(req.params.id) }
+  let query = { learner_id: Number(req.params.id) }
+  await Grade.findOneAndDelete(query);
+  res.send("")
   
-    let result = await collection.deleteOne(query)
+  // let collection = await db.collection("grades")
+  //   let query = { learner_id: Number(req.params.id) }
   
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+  //   let result = await collection.deleteOne(query)
+  
+  //   if (!result) res.send("Not found").status(404)
+  //   else res.send(result).status(200)
   })
 
 //Get a class's grade data
 router.get("/class/:id", async (req,res) => {
-    let collection = await db.collection("grades")
-    let query = {class_id: Number(req.params.id)}
 
-    // Check for learner_id parameter
-  if (req.query.learner) query.learner_id = Number(req.query.learner)
+  let search = {class_id:Number(req.params.id)};
+  let Learner = await Grade.find(search);
+  res.status(200).json({
+    data: Learner
+  })
 
-    let result = await collection.find(query).toArray()
 
-    if (!result) res.send("Not found").status(404)
-    else res.send(result).status(200)
+  //   let collection = await db.collection("grades")
+  //   let query = {class_id: Number(req.params.id)}
+
+  //   // Check for learner_id parameter
+  // if (req.query.learner) query.learner_id = Number(req.query.learner)
+
+  //   let result = await collection.find(query).toArray()
+
+  //   if (!result) res.send("Not found").status(404)
+  //   else res.send(result).status(200)
 })
 
 // Update a class id
