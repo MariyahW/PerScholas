@@ -4,7 +4,7 @@ dotenv.config();
 import mongoose from 'mongoose';
 
 
-const PORT = process.env.PORT || 9999;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -29,6 +29,10 @@ app.use("/transactions", transactions);
 
 app.get("/", (req, res) => {
     res.render('index')
+  })
+
+  app.get("/new", (req, res)=>{
+    res.render("accounts")
   })
   
 
