@@ -28,6 +28,7 @@ main-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 #mainSelect{
     width: 100%;

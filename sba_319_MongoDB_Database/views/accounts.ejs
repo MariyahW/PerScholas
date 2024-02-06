@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoName CRM</title>
-    <script defer src="./script.js" ></script>
+    <!-- <script defer src="./script.js" ></script> -->
+    <script defer src="./scripts/account.mjs"></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <nav-bar>
-        <a href="./index.ejs">Home</a>
+        <a href="http://localhost:9999/">Home</a>
         <!-- <a href="./accounts.ejs">Accounts</a> -->
         <a href="./cust.ejs">Customers</a>
         <a href="./trans.ejs">Transactions</a>
@@ -18,13 +19,20 @@
 
     
     <main-section>
-        <form id="mainSelect">
+        <form width="50%" id="accountSelect">
           <label for="">Add a new Account</label>
-          <input type="text">account_id:Number,
-          <input>
-          <input>
-          limit:Number,
-          products:[]
+          <input width="60%" type="number" id="account" placeholder="Account Number" min="1">
+          <input width="60%" type="number" id="limit" placeholder="limit" min="1" max="10000">
+          <label for="products">Select the products you would like to add?</label>
+          <select width="60%" id="products" multiple>
+            <option value="">Commodity</option>
+            <option value="">CurrencyService</option>
+            <option value="">InvestmentFund</option>
+            <option value="">Brokerage</option>
+            <option value="">InvestmentStock</option>
+          </select>
+          <button id="accBut" type="submit">Submit</button>
+         
         </form>
       </main-section>
   
