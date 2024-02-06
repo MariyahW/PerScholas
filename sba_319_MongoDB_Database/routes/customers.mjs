@@ -5,7 +5,7 @@ const Router = express.Router();
 
 Router.get('/', async (req, res)=>{
     let customers = await Customer.find();
-    res.status(200).json(customers);
+    res.status(200).send(customers)
     })
     
     Router.get("/search", async (req, res)=>{

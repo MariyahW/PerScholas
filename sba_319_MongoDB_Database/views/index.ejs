@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NoName CRM</title>
-    <script defer src="./script.js" ></script>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <script defer type="module" src="./script.mjs"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
     <nav-bar>
-        <a href="./index.ejs">Home</a>
-        <a href="./accounts.ejs">Accounts</a>
-        <a href="./cust.ejs">Customers</a>
-        <a href="./trans.ejs">Transactions</a>
+      <a href="./index.ejs">Home</a>
+      <a href="./accounts.ejs">Accounts</a>
+      <a href="./cust.ejs">Customers</a>
+      <a href="./trans.ejs">Transactions</a>
     </nav-bar>
     <header><h1>Welcome to NoNAme CRM</h1></header>
-    
-   <main-section> <form >
-    <label for="">What criteria would you like to search?</label>
-    <select id="mainSelect">
-        <option value="cust">Customer</option>
-        <option value="account">Account Number</option>
-        <option value="transaction">Transaction</option>
-    </select>
-</form></main-section>
-   
-</body>
+
+    <main-section>
+      <form id="mainSelect">
+        <label for="">What criteria would you like to search?</label>
+        <select>
+          <option value="default" selected disabled></option>
+          <option value="cust">Customer</option>
+          <option value="account">Account Number</option>
+          <option value="transaction">Transaction</option>
+        </select>
+      </form>
+    </main-section>
+
+    <add-section></add-section>
+  </body>
 </html>
