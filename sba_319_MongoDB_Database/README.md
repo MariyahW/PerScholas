@@ -22,6 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Axios](https://www.npmjs.com/package/axios)
 
 ### Installing
 
@@ -46,6 +47,8 @@ npm i mongoose
 
 npm i ejs
 
+npm i axios
+
 
 ### Start the application
 npm run start
@@ -63,6 +66,7 @@ Visit http://localhost:9999 in your web browser to access the application
 - [DotENV](https://www.npmjs.com/package/dotenv) - DotENV
 - [MongoDB](https://www.mongodb.com/) -MongoDB
 - [Mongoose](https://mongoosejs.com/) - Mongoose
+- [Axios](https://www.npmjs.com/package/axios) - Axios
 
 
 
