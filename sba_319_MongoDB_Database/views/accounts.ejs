@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoName CRM</title>
     <!-- <script defer src="./script.js" ></script> -->
-    <script defer src="./scripts/account.mjs"></script>
+    <script type="module" defer src="./scripts/account.mjs"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav-bar>
@@ -19,21 +20,32 @@
 
     
     <main-section>
+      <div class="accountDiv">
+        <h3>New Account</h3>
         <form width="50%" id="accountSelect">
-          <label for="">Add a new Account</label>
-          <input width="60%" type="number" id="account" placeholder="Account Number" min="1">
-          <input width="60%" type="number" id="limit" placeholder="limit" min="1" max="10000">
-          <label for="products">Select the products you would like to add?</label>
-          <select width="60%" id="products" multiple>
-            <option value="">Commodity</option>
-            <option value="">CurrencyService</option>
-            <option value="">InvestmentFund</option>
-            <option value="">Brokerage</option>
-            <option value="">InvestmentStock</option>
+          <input  type="number" name="account_id" placeholder="Account Number" min="1" required>
+          <input  type="number" name="limit" placeholder="limit" min="1" max="10000" required>
+          <label for="products">Select the product you would like to add. *If applying for more than one product please update the account</label>
+          <select name="products" required >
+            <option value="Commodity">Commodity</option>
+            <option value="CurrencyService">Currency Service</option>
+            <option value="InvestmentFund">Investment Fund</option>
+            <option value="Brokerage">Brokerage</option>
+            <option value="InvestmentStock">Investment Stock</option>
           </select>
           <button id="accBut" type="submit">Submit</button>
          
         </form>
+      </div class="accountDiv">
+      <div>
+        <h3>Close Account</h3>
+        <p>To close an account please look up the unique identifier labeled _id:</p>
+        <form id="accountDelete">
+          <input type="text" name="_id" placeholder="id number" required>
+          <button id="accDel" type="submit">Submit</button>
+
+        </form>
+      </div>
       </main-section>
   
       <add-section></add-section>

@@ -46,3 +46,23 @@ header{
     height: 10%;
   
 }
+
+#accountSelect {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px black solid;
+    width: 600px;
+    height: 500px;
+
+}
+#accountSelect>input {
+    width: 70%;
+    height: 15%;
+    border-radius: 15%;
+    border-style: hidden;
+}
+
+.accountDiv{
+    width: 60%;
+}

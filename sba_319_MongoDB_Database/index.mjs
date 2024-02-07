@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import mongoose from 'mongoose';
-
+import bodyParser from "body-parser";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -20,6 +20,7 @@ import transactions from "./routes/transactions.mjs";
 app.use(express.static('views'));
 app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(express.static('public'))
 
 
 
