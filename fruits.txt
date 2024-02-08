@@ -48,3 +48,8 @@ npx tsc --init --rootdir src --outdir lib |-Create your typescript config file
 create src file - this is where typescript files will work
 in src file create index.ts
 npx tsc --watch - this seems to act as a compiler 
+
+
+=================================================== React
+npx create-react-app name_of_folder - Starts a working react app
+rfc - starts a component page set up with opening div
