@@ -16,17 +16,22 @@ res.status(200).json(accounts);
 }).delete('/', async (req, res)=>{
     let toDelete = req.body.id;
     await Account.findByIdAndDelete(toDelete);
-} )
-
+})
 Router.get("/:id", async (req,res)=>{
     let accounts = await Account.find({account_id:Number(req.params.id)});
     res.status(200).json(accounts)
+}).patch('/:id', async(req, res)=>{
+    let account = await Account.findById(req.params.id);
+    account.products.push(req.body.products)
+    await Account.findByIdAndUpdate(req.params.id, {products:account.products})
+    res.status(200).json(account);
+    
 })
 
 
 
-Router.patch
 
-Router.delete
+
+
 
 export default Router;

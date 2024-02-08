@@ -36,8 +36,8 @@
           <button id="accBut" type="submit">Submit</button>
          
         </form>
-      </div class="accountDiv">
-      <div>
+      </div >
+      <div class="accountDiv">
         <h3>Close Account</h3>
         <p>To close an account please look up the unique identifier labeled _id:</p>
         <form id="accountDelete">
@@ -46,6 +46,23 @@
 
         </form>
       </div>
+      <div class="accountDiv">
+        <h3>Update Products</h3>
+        <form width="50%" id="accountUpdate">
+          <input type="text" name="_id" placeholder="id number" required>
+          <input  type="number" name="limit" placeholder="limit" min="1" max="10000" >
+          <label for="products">Select the product you would like to add. </label>
+          <select name="products"  >
+            <option value="Commodity">Commodity</option>
+            <option value="CurrencyService">Currency Service</option>
+            <option value="InvestmentFund">Investment Fund</option>
+            <option value="Brokerage">Brokerage</option>
+            <option value="InvestmentStock">Investment Stock</option>
+          </select>
+          <button id="accUpdate" type="submit">Udate</button>
+         
+        </form>
+      </div >
       </main-section>
   
       <add-section></add-section>
