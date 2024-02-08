@@ -14,7 +14,7 @@ res.status(200).json(accounts);
     "limit": newAccount.limit,
     "products":newAccount.products})
 }).delete('/', async (req, res)=>{
-    let toDelete = req.body.id;
+    let toDelete = req.body._id;
     await Account.findByIdAndDelete(toDelete);
 })
 Router.get("/:id", async (req,res)=>{
@@ -22,8 +22,10 @@ Router.get("/:id", async (req,res)=>{
     res.status(200).json(accounts)
 }).patch('/:id', async(req, res)=>{
     let account = await Account.findById(req.params.id);
+ 
     account.products.push(req.body.products)
     await Account.findByIdAndUpdate(req.params.id, {products:account.products})
+    console.log(account)
     res.status(200).json(account);
     
 })

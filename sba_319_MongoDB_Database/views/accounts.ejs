@@ -21,7 +21,9 @@
     
     <main-section>
       <div class="accountDiv">
-        <h3>New Account</h3>
+        <h3 style="width: 100%;text-align: center;">New Account</h3>
+        <br>
+        <br>
         <form width="50%" id="accountSelect">
           <input  type="number" name="account_id" placeholder="Account Number" min="1" required>
           <input  type="number" name="limit" placeholder="limit" min="1" max="10000" required>
@@ -38,7 +40,9 @@
         </form>
       </div >
       <div class="accountDiv">
-        <h3>Close Account</h3>
+        <h3 style="width: 100%;text-align: center;">Close Account</h3>
+        <br>
+        <br> 
         <p>To close an account please look up the unique identifier labeled _id:</p>
         <form id="accountDelete">
           <input type="text" name="_id" placeholder="id number" required>
@@ -50,22 +54,22 @@
         <h3>Update Products</h3>
         <form width="50%" id="accountUpdate">
           <input type="text" name="_id" placeholder="id number" required>
-          <input  type="number" name="limit" placeholder="limit" min="1" max="10000" >
           <label for="products">Select the product you would like to add. </label>
           <select name="products"  >
+            <option value="" selected disabled> Default</option>
             <option value="Commodity">Commodity</option>
             <option value="CurrencyService">Currency Service</option>
             <option value="InvestmentFund">Investment Fund</option>
             <option value="Brokerage">Brokerage</option>
             <option value="InvestmentStock">Investment Stock</option>
           </select>
-          <button id="accUpdate" type="submit">Udate</button>
+          <button id="accUpdate" type="submit">Update</button>
          
         </form>
       </div >
       </main-section>
   
-      <add-section></add-section>
+      <footer><p>Created by github.com/MariyahW</p></footer>
    
 
 </body>
