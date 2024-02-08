@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [ToDo](#todo)
 - [Getting Started](#getting_started)
 - [Built Using](#built_using)
 - [Authors](#authors)
@@ -10,6 +11,10 @@
 ## About <a name = "about"></a>
 
 This project is a mock CRM using the sample data in mongodb. It is will show client data and transactions based on user searches and the database information provided.
+
+## ToDo <a name ="todo"></a>
+
+The transaction form pages are not yet complete so the forms are not working. The paths are complete for the transactions though.
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -23,6 +28,10 @@ These instructions will get you a copy of the project up and running on your loc
 - [Mongoose](https://mongoosejs.com/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [Axios](https://www.npmjs.com/package/axios)
+- [Body-Parser]
+- [Form-Data]
+
+
 
 ### Installing
 
@@ -48,6 +57,10 @@ npm i mongoose
 npm i ejs
 
 npm i axios
+
+npm i form-data
+
+npm i body-parser
 
 
 ### Start the application
