@@ -13,7 +13,8 @@ Router.get('/', async (req, res)=>{
         res.status(200).json(trans);
     })
 
-Router.post
+// Router.post did not create post route as looking at the data there was a large nested array of objects. I will continue to work on best 
+// implementation for adding the object. maybe two different forms/routers
 
 
 
