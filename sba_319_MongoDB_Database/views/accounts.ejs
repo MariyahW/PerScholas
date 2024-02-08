@@ -12,9 +12,9 @@
 <body>
     <nav-bar>
         <a href="http://localhost:9999/">Home</a>
-        <!-- <a href="./accounts.ejs">Accounts</a> -->
-        <a href="./cust.ejs">Customers</a>
-        <a href="./trans.ejs">Transactions</a>
+        <a href="http://localhost:9999/new">Accounts</a>
+      <a href="http://localhost:9999/cust">Customers</a>
+      <a href="http://localhost:9999/trans">Transactions</a>
     </nav-bar>
     <header><h1>Accounts Page</h1></header>
 
@@ -25,6 +25,7 @@
         <br>
         <br>
         <form width="50%" id="accountSelect">
+         
           <input  type="number" name="account_id" placeholder="Account Number" min="1" required>
           <input  type="number" name="limit" placeholder="limit" min="1" max="10000" required>
           <label for="products">Select the product you would like to add. *If applying for more than one product please update the account</label>
@@ -45,15 +46,15 @@
         <br> 
         <p>To close an account please look up the unique identifier labeled _id:</p>
         <form id="accountDelete">
-          <input type="text" name="_id" placeholder="id number" required>
-          <button id="accDel" type="submit">Submit</button>
+          <input style="width: 40%;" type="text" name="_id" placeholder="id number" required>
+          <button  id="accDel" type="submit">Submit</button>
 
         </form>
       </div>
       <div class="accountDiv">
         <h3>Update Products</h3>
         <form width="50%" id="accountUpdate">
-          <input type="text" name="_id" placeholder="id number" required>
+          <input style="width: 40%;" type="text" name="_id" placeholder="id number" required>
           <label for="products">Select the product you would like to add. </label>
           <select name="products"  >
             <option value="" selected disabled> Default</option>

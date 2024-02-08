@@ -1,7 +1,7 @@
 html{
     width: 100%;
     height: 100%;
-    background-color: cornsilk;
+    background-color: #595959;
     /* display: flex;
     flex-direction: wrap;
     justify-content: center; */
@@ -18,7 +18,15 @@ body{
 nav-bar{
     width: 100%;
     height: 5%;
-    background-color: grey;
+    background-color: #808F85;
+    border: 1px solid #595959;
+    text-align: center;
+}
+
+nav-bar>a{
+    text-decoration: none;
+    color: #F2E9DC;
+    
 }
 main-section{
   
@@ -47,7 +55,7 @@ header{
   
 }
 
-#accountSelect {
+#accountSelect, #customerSelect {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -55,13 +63,15 @@ header{
     border-bottom: 0px;
     width: 600px;
     height: 500px;
+    background-color: #595959;
+    box-shadow: #595959  10px 0px 10px ;
 
 }
-#accountSelect>input {
+#accountSelect>input, #customerSelect>input {
     width: 70%;
-    height: 15%;
-    border-radius: 15%;
-    border-style: hidden;
+    height: 8%;
+    border-radius: 1%;
+    border-style: ridge;
 }
 
 .accountDiv{
@@ -71,6 +81,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #F2E9DC;
 } 
 
 footer{
@@ -91,7 +102,7 @@ footer{
 .accountDiv>form>input,.accountDiv>form>button  {
     width: 100px;
     height: 50px;
-    border-radius: 15%;
-    border-style: hidden;
+    border-radius: 1%;
+    border-style: ridge;
     
 }

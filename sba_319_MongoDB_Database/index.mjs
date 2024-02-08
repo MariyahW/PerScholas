@@ -35,6 +35,12 @@ app.get("/", (req, res) => {
   app.get("/new", (req, res)=>{
     res.render("accounts")
   })
+  app.get('/cust', (req, res)=>{
+    res.render("cust")
+  })
+  app.get('/trans', (req, res)=>{
+    res.render("trans")
+  })
   
 
 // Global error handling

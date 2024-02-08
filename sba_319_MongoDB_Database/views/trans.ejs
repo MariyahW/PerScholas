@@ -4,17 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoName CRM</title>
-    <script defer src="./script.js" ></script>
+    <!-- <script defer src="./script.js" ></script> -->
+    <script type="module" defer src="./scripts/account.mjs"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav-bar>
-        <a href="./index.ejs">Home</a>
-        <a href="./accounts.ejs">Accounts</a>
-        <a href="./cust.ejs">Customers</a>
-        <!-- <a href="./trans.ejs">Transactions</a> -->
+        <a href="http://localhost:9999/">Home</a>
+        <a href="http://localhost:9999/new">Accounts</a>
+      <a href="http://localhost:9999/cust">Customers</a>
+      <a href="http://localhost:9999/trans">Transactions</a>
     </nav-bar>
-Transaction
+    <header><h1>Transactions Page</h1></header>
+
+    
+    <main-section>
+      <div class="accountDiv">
+        <h3 style="width: 100%;text-align: center;">New Transaction</h3>
+        <br>
+        <br>
+        <form width="50%" id="transSelect">
+         
+          <input  type="number" name="account_id" placeholder="Account Number" min="1" required>
+          <input  type="date" name="bucket_start_date" placeholder="Start Date" required>
+          <input  type="date" name="bucket_end_date" placeholder="End Date" required>
+          <label for="products">Select the product you would like to add. *If applying for more than one product please update the account</label>
+         
+          <button id="accBut" type="submit">Submit</button>
+         
+        </form>
+      </div >
+     
+     
+      </main-section>
+  
+      <footer><p>Created by github.com/MariyahW</p></footer>
    
+
 </body>
 </html>

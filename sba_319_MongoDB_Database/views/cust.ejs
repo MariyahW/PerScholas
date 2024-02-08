@@ -4,17 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoName CRM</title>
-    <script defer src="./script.js" ></script>
+    <!-- <script defer src="./script.js" ></script> -->
+    <script type="module" defer src="./scripts/account.mjs"></script>
     <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav-bar>
-        <a href="./index.ejs">Home</a>
-        <a href="./accounts.ejs">Accounts</a>
-        <!-- <a href="./cust.ejs">Customers</a> -->
-        <a href="./trans.ejs">Transactions</a>
+        <a href="http://localhost:9999/">Home</a>
+        <a href="http://localhost:9999/new">Accounts</a>
+      <a href="http://localhost:9999/cust">Customers</a>
+      <a href="http://localhost:9999/trans">Transactions</a>
     </nav-bar>
-Customer
+    <header><h1>Customers Page</h1></header>
+
+    
+    <main-section>
+      <div class="accountDiv">
+        <h3 style="width: 100%;text-align: center;">New Client</h3>
+        <br>
+        <br>
+        <form width="50%" id="customerSelect">
+         
+          <input  type="text" name="username" placeholder="Enter Username" required>
+          <input  type="text" name="name" placeholder="Enter name"  required>
+          <input  type="text" name="address" placeholder="Enter Address"  required>
+          <input  type="date" name="birthdate" placeholder="DOB"  required>
+          <input  type="email" name="email" placeholder="Enter Email address"  required>
+        <input type="number" name="accounts" placeholder="Enter Account Number" required>
+          <button style="width: 40%;" id="cusBut" type="submit">Submit</button>
+         
+        </form>
+      </div >
+      <div class="accountDiv">
+        <h3 style="width: 100%;text-align: center;">Remove Client</h3>
+        <br>
+        <br> 
+        <p>To remove a client please look up the unique identifier labeled _id:</p>
+        <form id="customerDelete">
+          <input style="width: 40%;" type="text" name="_id" placeholder="id number" required>
+          <button  id="accDel" type="submit">Submit</button>
+
+        </form>
+      </div>
+      <div class="accountDiv">
+        <h3>Update Products</h3>
+        <form width="50%" id="customerUpdate">
+          <input style="width: 30%;" type="text" name="_id" placeholder="id number" required>
+          <input style="width: 30%;" type="number" name="accounts" placeholder="Enter Account Number" required>
+          <button id="accUpdate" type="submit">Update</button>
+         
+        </form>
+      </div >
+      </main-section>
+  
+      <footer><p>Created by github.com/MariyahW</p></footer>
    
+
 </body>
 </html>
