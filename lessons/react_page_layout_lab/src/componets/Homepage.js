@@ -6,7 +6,7 @@ export default function Homepage(props) {
   return (
     <div className="homepage">
         <h1>This is the Homepage</h1>
-        <Header />
+        <Header name={"Homepage"} />
         <Searchbar />
         <EmployeeList data = {props.data} />
         

@@ -14,9 +14,7 @@ export default function Employeelistitem(props) {
 
   return (
     <div className="emplistitem">
- 
     {emp}
-   
       </div>
   )
 }
