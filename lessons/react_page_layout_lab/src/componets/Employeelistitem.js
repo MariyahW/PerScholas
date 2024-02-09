@@ -1,11 +1,22 @@
 
 
-export default function Employeelistitem() {
+export default function Employeelistitem(props) {
+  
+  const emp =  props.data?.map((employee)=> {
+   return (
+    <>
+    <h5>{employee.name}</h5>
+    <p>{employee.title}</p>
+    </>
+   )
+})
+
+
   return (
     <div className="emplistitem">
-      <h5>Namely Name</h5>
-      <p>Important Title</p>
-
+ 
+    {emp}
+   
       </div>
   )
 }
