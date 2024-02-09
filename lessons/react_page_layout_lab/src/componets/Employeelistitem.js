@@ -7,6 +7,7 @@ export default function Employeelistitem(props) {
     <>
     <h5>{employee.name}</h5>
     <p>{employee.title}</p>
+    <img src={employee.image}></img>
     </>
    )
 })

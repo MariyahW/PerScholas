@@ -6,6 +6,7 @@ export default function MainEmployee(props) {
     <>
         <h4>{key}: </h4>
         <p> {props.person[key]}</p>  
+       
     </>
     )
  })
