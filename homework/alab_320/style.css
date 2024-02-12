@@ -1,0 +1,43 @@
+html{
+    /* height: 100%;
+    width: 100%; */
+    border-left: lightgrey solid 5 px;
+}
+
+body{
+    min-height: 100vh;
+    font-family: sans-serif;
+    max-width: 1000px;
+    margin: auto;
+   
+}
+header{
+    padding: 1rem;
+}
+main{
+    padding: 1rem;
+}
+footer{
+    padding: 1rem;
+}
+h1{
+    color: tomato;
+}
+.links{
+    padding: 0%;
+    list-style-type: none;
+    display: flex;
+   
+}
+a{
+    text-decoration: none;
+}
+header>nav>ul>li>a{
+    color: tomato;
+}
+footer>nav>ul>li>a{
+    color: lightgray;
+}
+img{
+    width: 100%;
+}
